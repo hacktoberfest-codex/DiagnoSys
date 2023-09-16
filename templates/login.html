@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        background: #dce1de;
+      }
+
+      .card {
+        margin-top: 100px;
+      }
+
+      h1 {
+        margin: 10px 0;
+        letter-spacing: -0.15rem;
+        font-size: 3rem;
+        font-weight: 500;
+        font-style: italic;
+      }
+      .containerN {
+        margin: 1rem;
+        position: relative;
+      }
+
+      .card {
+        padding: 2rem;
+        word-wrap: break-word;
+        width: 400px;
+        background-color: #fff;
+        border-radius: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href=""></a>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div>
+          <h1 style="font-size: 60px; font-weight: 400; color: #1f2421">
+            Welcome to
+            <span
+              style="
+                font-family: 'Rampart One', cursive;
+                font-size: 60px;
+                font-weight: 700;
+                color: #40a879;
+                font-style: italic;
+              "
+            >
+              MedAware
+            </span>
+          </h1>
+          <div class="texto">
+            <h1>
+              We bring to You
+              <br />
+              <span class="containerN">
+                <span class="word">Better Health.</span>
+                <span class="word">More Awareness.</span>
+                <span class="word">Free checkups.</span>
+                <span class="word">A Healthier Life!</span>
+              </span>
+            </h1>
+          </div>
+          <div class="image">
+            <img
+            src="{{url_for('static',filename='../static/resources/loginimg.svg')}}""
+            alt="">
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <form action="/" class="form" method="post">
+                <label for="">Email</label>
+                <input type="email" name="username" /><br />
+                <label for="">Password</label><br />
+                <input type="password" name="password" /><br /><br />
+                <input type="submit" value="Login" />
+              </form>
+              <p>
+                Not a member?
+                <a href="/register" style="color: #50cb93">Create account</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
