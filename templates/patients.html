@@ -29,9 +29,26 @@
                     <td><div id="x">{{ patient.email }}</div></td>
                     <td><div id="x">{{ patient.phone }}</div></td>
                     <td><div id="x">{{ patient.age }}</div></td>
-                    <td><div class= "resultbox" id="x">{{ patient.liver_disease }}</div></td>
-                    <td><div class= "resultbox" id="x">{{ patient.heart_disease }}</div></td>
-                    <td><div class= "resultbox" id="x">{{ patient.diabetes }}</div></td>
+                    {% if(patient.liver_disease==1)%}
+                    <td class="center"><div style="background-color:red" class="resultbox" id="x"></div></td>
+                    {% else %}
+                    <td class="center"><div style="background-color:green" class="resultbox" id="x"></div></td>
+
+                    {% endif %}
+
+                    {% if(patient.heart_disease==1)%}
+                    <td id="temp"><div style="background-color:red" class="resultbox" id="x"></div></td>
+                    {% else %}
+                    <td id="temp"><div style="background-color:green" class="resultbox" id="x"></div></td>
+
+                    {% endif %}
+                
+                    {% if(patient.diabetes==1)%}
+                    <td class="center"><div style="background-color:red" class="resultbox" id="x"></div></td>
+                    {% else %}
+                    <td class="center"><div style="background-color:rgb(5, 92, 5)" class="resultbox" id="x"></div></td>
+
+                    {% endif %}
                 </tr>
                 {% endfor %}
               </table>
@@ -39,6 +56,8 @@
         
 
        <script>
+
+          
     
             function redirect(e){
                 console.log(e)

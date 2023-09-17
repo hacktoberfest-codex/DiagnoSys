@@ -51,8 +51,24 @@ td *{
     max-height: 80vh;
     scroll-behavior: smooth;
     overflow-y: scroll;
+
 }
 .resultbox{
     width: 50px;
     border: 2px solid var(--bg-black);
+
+}
+
+.center
+{
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+
+    
+}
+#temp
+{
+    position:relative;
+    left:50px;
 }
