@@ -1,0 +1,165 @@
+
+
+{% if pred == 2 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/predict_heart.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+  
+    <nav>
+        <div class="navcontainer">
+            <a class="back button " href="{{ url_for('main') }}">Back to Home</a></div>
+        </div>
+        <div class="navcontainer">
+            <div class="logocontainer">
+                <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+                <div class="logo">Heart Static</div>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="headerred">SORRY! You might need a  <span>Checkup</span>.</div>
+        <div class="subtext">
+            Oopss!! There are chances you might be afflicted with a liver disorder . Go get your clinical tests done and consult with your doctor asap. You could follow the given link for further 
+             <div class="pointcontainer">
+                
+            </div>
+           
+            <div class="linksred">
+                Also if you want we can email you few tips by clicking the Email button...
+                <form action="{{ url_for('email_liver_neg') }}" method="POST">
+                    <button>Send email.</button>
+                </form>
+            </div>
+            
+            <div class="linksred">
+                For more informatiion related to diagnosis and treatment tips you could follow the<a href="https://www.mayoclinic.org/tests-procedures/liver-function-tests/about/pac-20394595" target="_blank"> link<sup>*</sup> </a>.
+            </div>
+          
+         </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>MedAware.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+            <p>
+              Want to contribute ? 
+              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/VaishaliRajpal28>PRITHWI. </a ></span></p>
+        </div>
+    </footer>
+  
+  
+    
+</body>
+</html>
+
+
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/predict_heart.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    {% if message %}
+    {{ pred }}
+    <script>
+      let q = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(q);
+        }, false);
+    </script>
+    {% endif %}
+    <nav>
+        <div class="navcontainer">
+            <a class="back button " href="{{ url_for('main') }}">Back to Home</a></div>
+        </div>
+        <div class="navcontainer">
+            <div class="logocontainer">
+                <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+                <div class="logo">MedAware</div>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="headergreen">GREAT! you are in good <span>Health</span>.</div>
+        <div class="subtext">
+            
+            <div class="pointcontainergreen" style="align-items: left;">
+                <div class="points"><b>Kudos! Your Liver seems healthy. You could follow the below suggestions for further strengthening your liver : </b></div>
+                <div class="points"><b>1. Maintain a healthy weight:</b> If you’re obese or even somewhat overweight, you’re in danger of having a fatty liver that can lead to non-alcoholic fatty liver disease (NAFLD), one of the fastest growing forms of liver disease. Weight loss can play an important part in helping to reduce liver fat.</div>
+                <div class="points"><b>2. Eat a balanced diet:</b> Avoid high calorie-meals, saturated fat, refined carbohydrates (such as white bread, white rice and regular pasta) and sugars. </div>
+                <div class="points"><b>3. Exercise regularly:</b> When you exercise consistently, it helps to burn triglycerides for fuel and can also reduce liver fat.</div>
+                <div class="points"><b>4. Avoid toxins:</b> Toxins can injure liver cells. Limit direct contact with toxins from cleaning and aerosol products, insecticides, chemicals, and additives. When you do use aerosols, make sure the room is ventilated, and wear a mask. Don’t smoke.</div>
+                <div class="points"><b>5. Get medical care if you’re exposed to blood:</b> If for any reason you come into contact with someone else’s blood, immediately follow up with your doctor. If you’re very concerned, go to your nearest hospital’s emergency room..</div>
+                <div class="points"><b>6. Don’t share personal hygiene items:</b> For example, razors, toothbrushes and nail clippers can carry microscopic levels of blood or other body fluids that may be contaminated.</div>
+                <div class="points"><b>7. Practice safe sex:</b> Unprotected sex or sex with multiple partners increases your risk of hepatitis B and hepatitis C.</div>
+                <div class="points"><b>8. Get vaccinated:</b> There are vaccines for hepatitis A and hepatitis B. Unfortunately, there’s no vaccine against the hepatitis C virus.</div>
+                
+            </div>
+            Also if you want we can email you few tips by clicking the Email button...
+            <form action="{{ url_for('email_liver_pos') }}" method="POST">
+                <button id="button-mail">Send email.</button>
+            </form>
+            <div class="linksgreen">
+                You can find more information in the following Links:
+            </div>
+            <div class="linksgreen"><a href="https://liverfoundation.org/resource-center/blog/13-ways-to-a-healthy-liver/" target="_blank">13 ways to a Healthy Liver. Blog...</a>.
+                
+            </div>
+            <div class="linksgreen">
+                <a href="https://www.medanta.org/https/www.medanta.org/patient-education-blog/5-simple-ways-to-keep-your-liver-healthy-and-strong" target="_blank">5 Simple ways to keep your liver healthy and strong. Medanta...</a>.
+            </div>
+            <div class="linksgreen">
+               
+            </div>
+            
+         </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>MedAware.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+            <p>
+              Want to contribute ? 
+              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj. </a ></span></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+{% endif %}
+
+
