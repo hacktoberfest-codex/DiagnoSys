@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+        {% for patient in patients %}
+            <p class= {{ patient.id }} id = {{ patient.email }} onclick="redirect(event)" id="x">{{ patient.name }}</p>
+
+        {% endfor %}
+
+       <script>
+    
+            function redirect(e){
+                console.log(e)
+                const classvar = e.target.className;
+                const email = e.target.id
+                console.log(classvar)
+                fetch('http://localhost:5002/main',
+                {
+                    headers:{
+                        'content-type':'application/json'
+                    },
+                    method : 'post',
+                    body: JSON.stringify({
+                        patient:classvar,
+                        email:email
+                    })
+                }).then(
+                    (resp)=>{
+                        window.location.href='http://localhost:5002/main'
+                    }
+                )
+            }
+       </script>
+</body>
+</html>
+
