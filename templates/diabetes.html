@@ -20,6 +20,15 @@
 </head>
 
 <body>
+    {% if message %}
+    <script>
+      let p = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(p);
+        }, false);
+    </script>
+    {% endif %}
     <nav>
         <div class="navElemContainers flexlogo">
             <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
@@ -125,6 +134,15 @@
     
     
     </footer>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            var nav = document.querySelector("nav");
+            nav.classList.toggle("sticky", window.scrollY > 0);
+        }) 
+    </script>
+
+
+
 </body>
 
 </html>
