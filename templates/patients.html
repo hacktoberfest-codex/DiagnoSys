@@ -3,30 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
-      rel="stylesheet"
-    />
-
     <link
       rel="stylesheet"
       type="text/css"
       href="{{url_for('static',filename='../static/css/main.css')}}"
     />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
     <link rel="stylesheet" href="../static/css/table.css" />
     <title>Document</title>
   </head>
@@ -42,64 +27,53 @@
         <div class="navItem"><a href="{{url_for('main')}}">Home</a></div>
         <div class="navItem"><a href="#news">Blogs</a></div>
         <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
-        <!-- <div class="searchContainer ">
-                  <input type="text" class="searchlabel" >Search</input>
-                  <div class="searchbtn"></div>
-              </div> -->
-
-        <!-- <div class="growing-search">
-                  <form action="{{ url_for('main') }}" method="post">
-                  <div class="input ">
-                    <input id="searchinput" required type="text" name="search"/>
-                  </div>
-                  <div class="submit">
-                    <button id="search" type="submit" name="go_search">
-                      <span class="fa fa-search"></span>
-                    </button>
-                  </div>
-                  </form>
-              </div> -->
       </div>
       <div class="navElemContainers endnav">
         <div class="button"><a href="{{url_for('logout')}}">Log Out</a></div>
       </div>
     </nav>
-    <table>
-      <tr>
-        <th><div>Name</div></th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Age</th>
-        <th>liver_disease</th>
-        <th>heart_disease</th>
-        <th>diabetes</th>
-      </tr>
+    <div class="allpatientpage_container">
+      <table class="table_container">
+        <tr>
+          <th><div>Name</div></th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Age</th>
+          <th>Liver disease</th>
+          <th>Heart disease</th>
+          <th>Diabetes</th>
+        </tr>
 
-      {% for patient in patients %}
-      <tr>
-        <td>
-          <p
-            class="{{"
-            patient.id
-            }}
-            id="{{"
-            patient.name
-            }}
-            onclick="redirect(event)"
-            id="x"
-          >
-            {{ patient.name }}
-          </p>
-        </td>
-        <td><p id="x">{{ patient.email }}</p></td>
-        <td><p id="x">{{ patient.phone }}</p></td>
-        <td><p id="x">{{ patient.age }}</p></td>
-        <td><p id="x">{{ patient.liver_disease }}</p></td>
-        <td><p id="x">{{ patient.heart_disease }}</p></td>
-        <td><p id="x">{{ patient.diabetes }}</p></td>
-      </tr>
-      {% endfor %}
-    </table>
+        {% for patient in patients %}
+        <tr>
+          <td>
+            <div
+              class="{{"
+              patient.id
+              }}
+              id="{{"
+              patient.name
+              }}
+              onclick="redirect(event)"
+              id="x"
+            >
+              {{ patient.name }}
+            </div>
+          </td>
+          <td><div id="x">{{ patient.email }}</div></td>
+          <td><div id="x">{{ patient.phone }}</div></td>
+          <td><div id="x">{{ patient.age }}</div></td>
+          <td>
+            <div class="resultbox" id="x">{{ patient.liver_disease }}</div>
+          </td>
+          <td>
+            <div class="resultbox" id="x">{{ patient.heart_disease }}</div>
+          </td>
+          <td><div class="resultbox" id="x">{{ patient.diabetes }}</div></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
 
     <script>
       function redirect(e) {
@@ -121,43 +95,27 @@
         });
       }
     </script>
-    <footer>
-      <div class="footer-content">
-        <h3>DiagnoSys.co</h3>
-        <p>
-          "Stay informed, stay ahead - let our disease check guide you through
-          life's uncertain thread."
-        </p>
-        <p>
-          Want to contribute ?
-          <img
-            class="github"
-            src="{{url_for('static',filename='../static/resources/github-4.png')}}"
-          />
-        </p>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          copyright &copy;2023. designed by
-          <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span>
-          <span><a href="https://github.com/samyak269"> Samyak , </a></span>
-          <span
-            ><a href="https://github.com/The-Prithwiraj06"
-              >Prithwiraj,
-            </a></span
-          >
-          <span><a href="https://github.com/deepak1ok">Deepak, </a></span>
-          <span
-            ><a href="https://github.com/saswatdas121"
-              >Saswat Jyoti Das.
-            </a></span
-          >
-
-          <span
-            ><a href="https://github.com/RamaSingh7653">Rama Singh </a></span
-          >
-        </p>
-      </div>
-    </footer>
+     <footer>
+        <div class="footer-content">
+            <h3>DiagnoSys.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+            <p>
+              Want to contribute ? 
+              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj, </a ></span> <span><a href="https://github.com/deepak1ok">Deepak, </a></span>
+            <span
+              ><a href="https://github.com/saswatdas121"
+                >Saswat, 
+              </a></span
+            >
+    
+            <span
+              ><a href="https://github.com/RamaSingh7653">Rama </a></span
+            ></p>
+        </div>
+      </footer>
   </body>
 </html>
