@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/liver.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    {% if message %}
+    <script>
+      let p = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(p);
+        }, false);
+    </script>
+    {% endif %}
+    <nav>
+        <div class="navElemContainers flexlogo">
+            <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+            <div class="logo">MedAware</div>
+        </div>
+        <div class="navElemContainers middlenav">
+            <div class="navItem"><a href="{{url_for('main')}}">Home</a></div>
+            <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
+
+        </div>
+        <div class="navElemContainers">
+            <div class="buttonColour brown"><a href="{{url_for('logout')}}">Log Out</a></div>
+            <div class="buttonColour brown"><a href="{{ url_for('main') }}">Back</a></div>
+        </div>
+    </nav>
+
+    <div class="formcontainer" id="predict">
+        <div class="headerline">Liver Condition Detector</div>
+        <div class="divider_thick up10 "></div>
+
+        <form action="{{ url_for('predictPage_liver') }}" method="POST">
+
+
+            <div class="form_main_subcontainer">
+                <div class="formsubcontainer">
+
+                    <div class="seperator">
+                        <label for="age">Age</label>
+                        <input type="text" id="age" name="age" placeholder="Your age..">
+                    </div>
+                    <p class="headDescription">Age of the patient</p>
+                    <div class="formseperator brown"></div>
+
+                    <div class="seperator">
+                        <label for="gender">Gender</label>
+                        <select id="sex" name="sex">
+                            <option selected>----select option----</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                    <p class="headDescription">Gender of the patient </p>
+                    <div class="formseperator brown"></div>
+
+                    <div class="labelspacing">
+                        <label for="tb">Total Bilirubin</label>
+                        <input type="text" name="Total_Bilirubin" placeholder="Total Bilirubin">
+                    </div>
+                    <p class="headDescription">Total Bilirubin : Blood test that measures the amount of a substance called bilirubin</p>
+                    <div class="formseperator brown"></div>
+
+                    <div class="labelspacing">
+                        <label for="db">Direct Bilirubin</label>
+                        <input type="text" name="Direct_Bilirubin" placeholder="Direct Bilirubin">
+                    </div>
+                    <p class="headDescription">Direct Bilirubin : Normally measured in blood Test</p>
+                    <div class="formseperator brown"></div>
+
+                    <div class="seperator">
+                        <label for="ap">Alkaline Phosphotase</label>
+                        <input type="text" name="Alkaline_Phosphotase" placeholder="Alkaline Phosphotase">
+                    </div>
+                    <p class="headDescription">Alkaline Phosphotase : Alkaline phosphatase is an enzyme that's found throughout your body found in normal blood test</p>
+                <div class="formseperator brown"></div>
+                </div>
+                <div class="formsubcontainer">
+                    <div class="seperator">
+                        <label for="aa">Alamine Aminotransferase</label>
+                        <input type="text" name="Alamine_Aminotransferase" placeholder="Alamine Aminotransferase">
+                    </div>
+                    <p class="headDescription">Alamine Aminotransferase : Enzyme that's mainly found in your liver, though it exists in other parts of your body</p>
+                    <div class="formseperator brown"></div>
+
+                    <div class="labelspacing">
+                        <label for="asa">Aspartate_Aminotransferase</label>
+                        <input type="text" name="Aspartate_Aminotransferase" placeholder="Aspartate Aminotransferase">
+                    </div>
+                    <p class="headDescription">Aspartate Aminotransferase : Also an enzyme found in mostly in liver, but also in muscles and other organs </p>
+                    <div class="formseperator brown"></div>
+                    
+                    <div class="labelspacing">
+                        <label for="tp">Total proteins</br>
+                            <input type="text" name="Total_Protiens" placeholder="Total Protiens">
+                    </div>
+                    <p class="headDescription">Total Assimilation Protiens</p>
+                    <div class="formseperator brown"></div>
+
+
+                    <div class="seperator">
+                        <label for="albumin">Albumin</label>
+                        <input type="text" name="Albumin" placeholder="Albumin">
+                    </div>
+                    <p class="headDescription">Albumin : Albumin is a protein made by your liver. Checked in blood</p>
+                    <div class="formseperator brown"></div>
+
+                    <div class="labelspacing">
+                        <label for="agr">Albumin and Globulin Ratio</label>
+                        <input type="text" name="Albumin_and_Globulin_Ratio" placeholder="Albumin and Globulin Ratio">
+                    </div>
+                    <p class="headDescription">Albumin and Globulin Ratio : Both are protein. The normal range for albumin/globulin ratio is usually around 1 to 2</p>
+                    <div class="formseperator brown"></div>
+
+
+
+
+
+                </div>
+                <div class="formimage">
+                    <img src="{{url_for('static',filename='../static/resources/liverinnerimage.svg')}}">
+                </div>
+
+            </div>
+            <input type="submit" class="buttonColour brown" value="Predict">
+        </form>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>MedAware.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+            <p>
+              Want to contribute ? 
+              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj. </a ></span></p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            var nav = document.querySelector("nav");
+            nav.classList.toggle("sticky", window.scrollY > 0);
+        }) 
+    </script>
+
+
+
+</body>
+
+</html>

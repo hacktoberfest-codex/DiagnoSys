@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/heart.css')}}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+ 
+</head>
+
+<body>
+  {% if message %}
+    <script>
+      let p = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(p);
+        }, false);
+    </script>
+    {% endif %}
+  <nav>
+    <div class="navElemContainers flexlogo">
+      <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+      <div class="logo">MedAware</div>
+    </div>
+    <div class="navElemContainers middlenav">
+      <div class="navItem" ><a href="{{url_for('main')}}">Home</a></div>
+      <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
+      
+    </div>
+    <div class="navElemContainers">
+      <div class="buttonColour red"><a href="{{url_for('logout')}}">Log Out</a></div>
+      <div class="buttonColour red"><a href="{{ url_for('main') }}">Back</a></div>
+    </div>
+  </nav>
+  
+  <div class="formcontainer" id="predict">
+    <div class="headerline">Predict your heart condition </div>
+    <div class="divider_thick up10 "></div>
+
+    <form action="{{ url_for('predictPage_heart') }}" method="POST">
+
+
+      <div class="form_main_subcontainer">
+        <div class="formsubcontainer">
+
+            <div class="seperator">
+              <label for="age">Age</label>
+              <input type="text" id="age" name="age" placeholder="Your age..">
+              <p class="headDescription">**Age - age in years</p>
+            </div>
+            <div class="formseperator"></div>
+
+            <div class="labelspacing">
+              <label for="sex">Sex</label>
+              <select id="sex" name="sex">
+                <option selected>----select option----</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+              <p class="headDescription">**Sex - (1 = male; 0 = female)</p>
+            </div>
+            <div class="formseperator"></div>
+
+            <div class="labelspacing">
+              <label for="cp">Chest Pain Type</label>
+              <select id="cp" name="cp">
+                <option selected>----select option----</option>
+                <option value="0">Typical Angina</option>
+                <option value="1">Atypical Angina</option>
+                <option value="2">Non-anginal Pain</option>
+                <option value="3">Asymtomatic</option>
+              </select>
+              <p class="headDescription">
+                **Chest Pain type -
+                <ul>
+                    <div class="headDescription"> * 0: Typical angina: chest pain related decrease blood supply to the heart</div>
+                    <div class="headDescription">  * 1: Atypical angina: chest pain not related to heart</div>
+                    <div class="headDescription">  * 2: Non-anginal pain: typically esophageal spasms (non heart related)</div>
+                    <div class="headDescription">  * 3: Asymptomatic: chest pain not showing signs of disease</div>
+                </ul>
+              </p>
+             
+            </div>
+            <div class="formseperator"></div>
+          
+            <div class="seperator">
+              <label for="trestbps">Resting Blood Pressure</label>
+              <input type="text" id="trestbps" name="trestbps" placeholder="A number in range [94-200] mmHg"> 
+              <p class="headDescription">**Sex - (1 = male; 0 = female)</p>
+            </div>
+            <div class="formseperator"></div>
+          
+            <div class="seperator">
+              <label for="chol">Serum Cholesterol</label>
+              <input type="text" id="chol" name="chol" placeholder="A number in range [126-564] mg/dl">  
+            </div>
+            <p class="headDescription">
+              chol - serum cholestoral in mg/dl
+              <ul>
+                  <div class="headDescription"> * serum = LDL + HDL + .2 * triglycerides </div>
+                  <div class="headDescription">  *above 200 is cause for concern</div>
+              </ul>
+            </p>
+            <div class="formseperator"></div>
+          
+            <div class="labelspacing">
+              <label for="fbs">Fasting Blood Sugar</label>
+              <select id="fbs" name="fbs">
+                <option selected>----select option----</option>
+                <option value="1">Greater than 120 mg/dl</option>
+                <option value="0">Less than 120 mg/dl</option>
+              </select>
+            </div>
+            <p class="headDescription">
+              fbs - (fasting blood sugar > 120 mg/dl) (1 = true; 0 = false )
+              * '>126' mg/dL signals diabetes
+            </p>
+            <div class="formseperator"></div>
+            <div class="labelspacing">
+              <label for="oldpeak">Resting ECG result</br>
+              <select id="oldpeak" name="oldpeak">
+                <option selected>----select option----</option>
+                <option value="0">Normal</option>
+                <option value="1">Having ST-T wave abnormality</option>
+                <option value="2">Probable or definite left ventricular
+                hypertrophy</option>
+              </select>
+            </div>
+            <p class="headDescription">
+              restecg - resting electrocardiographic results
+              <ul>
+                  <div class="headDescription">  * 0: Nothing to note</div>
+                  <div class="headDescription">  * 1: ST-T Wave abnormality
+                    <ul>
+                      <div class="headDescription"> * can range from mild symptoms to severe problems</div>
+                      <div class="headDescription"> * signals non-normal heart beat </div>
+                    </ul>
+                  </div>
+                  <div class="headDescription">  * 2: Possible or definite left ventricular hypertrophy
+                    <ul>
+                      <div class="headDescription">* Enlarged heart's main pumping chamber</div>
+                    </ul>
+                  </div>
+              </ul>
+            </p>
+            <div class="formseperator"></div>
+           
+
+        </div>
+        <div class="formsubcontainer">
+
+          <div class="seperator">
+            <label for="thalach">Max Heart Rate </label>
+            <input type="text" id="thalach" name="thalach" placeholder="A number in range [71-202] bpm">
+          </div>
+          <p class="headDescription">**thalach - maximum heart rate achieved</p>
+          <div class="formseperator"></div>
+          
+          <div class="labelspacing">
+            <label for="exang">Exercise-induced Angina</label>
+            <select id="exang" name="exang">
+              <option selected>----select option----</option>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <p class="headDescription"> exang - exercise induced angina (1 = yes; 0 = no) </p>
+          <div class="formseperator"></div>
+          
+          <div class="seperator">
+            <label for="slope">St depreesion induced <br>by exercise relative to rest</label>
+            <input type="text" id="slope" name="slope" placeholder="ST depression, typically in [0-6.2]">
+          </div>
+          <p class="headDescription"> oldpeak - ST depression induced by exercise relative to rest looks at stress of heart during excercise unhealthy heart will stress more          </p>
+          <div class="formseperator"></div>
+          
+          <div class="labelspacing">
+            <label for="restecg">Slope of peak exercise <br>ST segment</label>
+            <select id="restecg" name="restecg">
+              <option selected>----select option----</option>
+              <option value="0">Upsloping</option>
+              <option value="1">Flat</option>
+              <option value="2">Downsloping</option>
+              
+            </select>
+          </div>
+          <p class="headDescription">
+            slope - the slope of the peak exercise ST segment
+            <ul>
+                <div class="headDescription">* 0: Upsloping: better heart rate with excercise (uncommon) </div>
+                <div class="headDescription">* 1: Flatsloping: minimal change (typical healthy heart)</div>
+                <div class="headDescription">* 2: Downslopins: signs of unhealthy heart
+                </div>
+            </ul>
+          </p>
+          <div class="headDescription"></div>
+         
+          <div class="seperator">
+            <label for="ca">Number of Major vessels</label>
+            <input type="text" id="ca" name="ca" placeholder="Typically in [0-4]">  
+          </div>
+          <p class="headDescription">
+            ca - number of major vessels (0-3) colored by flourosopy
+            <ul>
+                <div class="headDescription">*colored vessel means the doctor can see the blood passing through </div>
+                <div class="headDescription">*the more blood movement the better (no clots)</div>
+            </ul>
+          </p>
+          <div class="formseperator"></div>
+          
+      
+          <div class="labelspacing">
+            <label for="thal">Thalassemia</label>
+            <select id="thal" name="thal">
+              <option selected>----select option----</option>
+              <option value="0">Normal</option>
+              <option value="1">Fixed Defect</option>
+              <option value="2">Reversible Defect</option>
+            </select>
+          </div>
+          <p class="headDescription">
+            thal - thalium stress result
+            <ul>
+                <div class="headDescription"> * 1,3: normal</div>
+                <div class="headDescription"> * 6: fixed defect: used to be defect but ok now </div>
+                <div class="headDescription"> * 7: reversable defect: no proper blood movement when excercising </div>
+            </ul>
+          </p>
+          <div class="formseperator"></div>
+     
+        </div>
+        <div class="formimage">
+          <img src="{{url_for('static',filename='../static/resources/Cardiologist-pana.svg')}}">
+        </div>
+        
+      </div>
+      <input type="submit" class="buttonColour red" value="Predict">
+    </form>
+  </div>
+
+  
+  <footer>
+    <div class="footer-content">
+        <h3>MedAware.co</h3>
+        <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+        <p>
+          Want to contribute ? 
+          <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+        </p>
+    </div>
+    <div class="footer-bottom">
+      <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj. </a ></span></p>
+    </div>
+  </footer>
+  <script type ="text/javascript"> 
+    window.addEventListener("scroll",function(){ 
+        var nav = document.querySelector("nav"); 
+        nav.classList.toggle("sticky",window.scrollY > 0); 
+    }) 
+  </script>
+  
+</body>
+
+</html>
