@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/diabetes.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    {% if message %}
+    <script>
+      let p = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(p);
+        }, false);
+    </script>
+    {% endif %}
+    <nav>
+        <div class="navElemContainers flexlogo">
+            <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+            <div class="logo">MedAware</div>
+        </div>
+        <div class="navElemContainers middlenav">
+            <div class="navItem"><a href="{{url_for('main')}}">Home</a></div>
+            <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
+
+        </div>
+        <div class="navElemContainers">
+            <div class="buttonColour blue"><a href="{{url_for('logout')}}">Log Out</a></div>
+        </div>
+    </nav>
+
+    <div class="formcontainer" id="predict">
+        <div class="headerline">Diabetes Condition Detector</div>
+        <div class="divider_thick up10 "></div>
+
+        <form action="{{ url_for('predictPage_diabetes') }}" method="POST">
+
+
+            <div class="form_main_subcontainer">
+                <div class="formsubcontainer">
+
+                    <div class="seperator">
+                        <label for="No. of Pregnancies">No. of Pregnancies</label>
+                        <input type="text" id="No. of Pregnancies" name="No. of Pregnancies" placeholder="Your age..">
+                    </div>
+                    <p class="headDescription">Number of times pregnant</p>
+                    <div class="formseperator blue"></div>
+
+                    <div class="seperator">
+                        <label for="Gender">Glucose</label>
+                        <input type="text" id="Glucose" name="Glucose" placeholder="Glucose">
+                    </div>
+                    <p class="headDescription">Glucose Level</p>
+                    <div class="formseperator blue"></div>
+
+                    <div class="labelspacing">
+                        <label for="bp">Blood Pressure</label>
+                        <input type="text" name="bp" placeholder="Blood Pressure">
+                    </div>
+                    
+                    <div class="formseperator blue"></div>
+
+                    <div class="labelspacing">
+                        <label for="st">Skin Thickness</label>
+                        <input type="text" name="Skin Thickness" placeholder="Skin Thickness">
+                    </div>
+                  
+                    <div class="formseperator blue"></div>
+
+                    <div class="seperator">
+                        <label for="i">Insulin</label>
+                        <input type="text" name="Insulin" placeholder="Insulin">
+                    </div>
+                    <p class="headDescription">Insulin level of body</p>
+                <div class="formseperator blue"></div>
+                </div>
+                <div class="formsubcontainer">
+                    <div class="seperator">
+                        <label for="bmi">BMI</label>
+                        <input type="text" name="bmi" placeholder="Body to mass ratio">
+                    </div>
+                    <p class="headDescription">Alamine Aminotransferase : Enzyme that's mainly found in your liver, though it exists in other parts of your body</p>
+                    <div class="formseperator blue"></div>
+
+                    <div class="labelspacing">
+                        <label for="asa">DiabetesPedigreeFunction</label>
+                        <input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction">
+                    </div>
+                    <p class="headDescription">The Diabetes Pedigree Function, pedi, provides some data on diabetes mellitus history in relatives and the genetic relationship of those relatives to the patient.</p>
+                    <div class="formseperator blue"></div>
+                    
+                    <div class="labelspacing">
+                        <label for="tp">Age</br>
+                            <input type="text" name="Age" placeholder="Age">
+                    </div>
+    
+                    <div class="formseperator blue"></div>
+
+
+                </div>
+                <div class="formimage">
+                    <img src="{{url_for('static',filename='../static/resources/Diabetesimg.svg')}}">
+                </div>
+
+            </div>
+            <input type="submit" class="buttonColour blue" value="Predict">
+        </form>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>MedAware.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak, </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj.</a ></span></p>
+        </div>
+    
+    
+    </footer>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            var nav = document.querySelector("nav");
+            nav.classList.toggle("sticky", window.scrollY > 0);
+        }) 
+    </script>
+
+
+
+</body>
+
+</html>
