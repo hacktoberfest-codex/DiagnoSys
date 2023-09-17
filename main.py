@@ -140,7 +140,7 @@ def uploadpatient():
                    name=name, age=age, phone=phone))
     db.session.commit()
 
-    return {"message": "patient created"}
+    return redirect(url_for('patients'))
 
 
 @app.route('/patients', methods=['GET', 'POST'])
