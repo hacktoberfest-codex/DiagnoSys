@@ -1,29 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='../static/css/main.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <nav>
+      <div class="navElemContainers flexlogo">
+        <img
+          src="{{url_for('static',filename='../static/resources/heart.png')}}"
+        />
+        <div class="logo">DiagnoSys</div>
+      </div>
+      <div class="navElemContainers middlenav">
+        <div class="navItem"><a href="{{url_for('main')}}">Home</a></div>
+        <div class="navItem"><a href="#news">Blogs</a></div>
+        <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
+      </div>
+      <div class="navElemContainers endnav">
+        <div class="button"><a href="{{url_for('logout')}}">Log Out</a></div>
+      </div>
+    </nav>
+    <div class="br9 card-body">
+      <form action="/uploadpatient" class="form" method="post">
+        <label for="">Email</label>
+        <input type="email" class="form-control" name="email" /><br />
+        <label for="">Name</label><br />
+        <input type="text" class="form-control" name="name" /><br /><br />
+        <label for="">Age</label><br />
+        <input type="number" class="form-control" name="age" /><br /><br />
+        <label for="">Phone</label><br />
+        <input type="number" class="form-control" name="phone" /><br /><br />
+        <input type="submit" value="Login" />
+      </form>
 
-    <div class=" br9 card-body">
-        <form action="/uploadpatient" class="form" method="post" >
-            <label for="">Email</label>
-            <input type="email" class="form-control" name="email"><br>
-            <label for="">Name</label><br>
-            <input type="text" class="form-control" name="name"><br><br>
-            <label for="">Age</label><br>
-            <input type="number" class="form-control" name="age"><br><br>
-            <label for="">Phone</label><br>
-            <input type="number" class="form-control" name="phone"><br><br>
-            <input type="submit" value="Login">
-        </form>
-
-        <a href="{{url_for('patients')}}">All patients</a>
-    
-
+      <a href="{{url_for('patients')}}">All patients</a>
     </div>
-    
-</body>
+    <footer>
+      <div class="footer-content">
+        <h3>DiagnoSys.co</h3>
+        <p>
+          "Stay informed, stay ahead - let our disease check guide you through
+          life's uncertain thread."
+        </p>
+        <p>
+          Want to contribute ?
+          <img
+            class="github"
+            src="{{url_for('static',filename='../static/resources/github-4.png')}}"
+          />
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          copyright &copy;2023. designed by
+          <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span>
+          <span><a href="https://github.com/samyak269"> Samyak , </a></span>
+          <span
+            ><a href="https://github.com/The-Prithwiraj06"
+              >Prithwiraj,
+            </a></span
+          >
+          <span><a href="https://github.com/deepak1ok">Deepak, </a></span>
+          <span><a href="https://github.com/saswatdas121">Saswat , </a></span>
+
+          <span><a href="https://github.com/RamaSingh7653">Rama </a></span>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
