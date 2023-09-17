@@ -1,7 +1,7 @@
 # Team-54
 
-## Welcome to DiagnoSify. We bring you Better Health and more Awareness!!
-# DiagnoSify
+## Welcome to DiagnoSys. We bring you Better Health and more Awareness!!
+# DiagnoSys
  
 
 A web-based medical diagnosis and prediction application that integrates machine learning models with human input. It assists doctors in diagnosing diseases without inhibiting their expertise and final judgment.
