@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,22 +10,23 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/main.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
-  </head>
-  <body>
+</head>
+
+<body>
     {% if message %}
     <script>
         let p = "{{message}}"
-        window.addEventListener('load', 
-        function() { 
-            alert(p);
-        }, false);
+        window.addEventListener('load',
+            function () {
+                alert(p);
+            }, false);
     </script>
     {% endif %}
     <nav>
@@ -70,22 +72,28 @@
         <div class="inputval">{{ result }}</div>
     </div> -->
 
-    
+
     <div class="home">
         <div class="subcontainer text">
             <div class="headerline">
                 Check your symptoms and explore potential diseases through our <span>MAGICAL</span> ML trained model.
             </div>
             <div class="divider_thick"></div>
-            <div class="subtext">Welcome to our advanced Disease Diagnosis Portal powered by Machine Learning (ML) trained models. Our cutting-edge technology harnesses the power of artificial intelligence to provide accurate and reliable disease predictions based on your symptoms. By inputting your symptoms into our intuitive interface, our ML models analyze the data and generate personalized results, helping you identify potential diseases and conditions.
+            <div class="subtext">Welcome to our advanced Disease Diagnosis Portal powered by Machine Learning (ML)
+                trained models. Our cutting-edge technology harnesses the power of artificial intelligence to provide
+                accurate and reliable disease predictions based on your symptoms. By inputting your symptoms into our
+                intuitive interface, our ML models analyze the data and generate personalized results, helping you
+                identify potential diseases and conditions.
                 <br><br>
-                Through our models,A user can detect any imbalance condition in his/her heart and liver. A user can also detect wheather he/she is having Covid19 and Diabetes. We also check some rear mental disease like ASD(Autsim Spectrum Disorder) which is not easily recongnized.
-                <br><br></div>
+                Through our models,A user can detect any imbalance condition in his/her heart and liver. A user can also
+                detect wheather he/she is having Covid19 and Diabetes. We also check some rear mental disease like
+                ASD(Autsim Spectrum Disorder) which is not easily recongnized.
+                <br><br>
+            </div>
 
         </div>
         <div class="subcontainer">
-            <img class="homeimage"
-                src="{{url_for('static',filename='../static/resources/Blood test-cuate.svg')}}">
+            <img class="homeimage" src="{{url_for('static',filename='../static/resources/Blood test-cuate.svg')}}">
         </div>
     </div>
 
@@ -93,18 +101,23 @@
         <div class="headerlinesmall">Have a Deeper dive into our individual health checkup program</div>
         <div class="flex2">
             <div class="diseasecard ">
-                <img class="diseaseCardImage" src="{{url_for('static',filename='../static/resources/Cardiologist-rafiki-2.svg')}}" alt="">
+                <img class="diseaseCardImage"
+                    src="{{url_for('static',filename='../static/resources/Cardiologist-rafiki-2.svg')}}" alt="">
                 <div class="deseaseCardDescription">Heart Disease Predictor</div>
-                <div class="deseaseCardDetail">Welcome to our Heart Disease Predictor, a state-of-the-art tool designed to assess your risk of heart disease using advanced machine learning algorithms. </div>
+                <div class="deseaseCardDetail">Welcome to our Heart Disease Predictor, a state-of-the-art tool designed
+                    to assess your risk of heart disease using advanced machine learning algorithms. </div>
                 <div class="diseases">
                     <div class="buttonColour red"><a href="{{url_for('heart')}}">Check Heart</a></div>
                 </div>
             </div>
             <div class="blackdivider"></div>
             <div class="diseasecard ">
-                <img class="diseaseCardImage" src="{{url_for('static',filename='../static/resources/Liver.svg')}}" alt="">
+                <img class="diseaseCardImage" src="{{url_for('static',filename='../static/resources/Liver.svg')}}"
+                    alt="">
                 <div class="deseaseCardDescription">Liver Condition Checker</div>
-                <div class="deseaseCardDetail">Welcome to our Liver Condition Checker, a powerful tool designed to help you identify potential liver diseases and conditions using advanced machine learning algorithms.</div>
+                <div class="deseaseCardDetail">Welcome to our Liver Condition Checker, a powerful tool designed to help
+                    you identify potential liver diseases and conditions using advanced machine learning algorithms.
+                </div>
                 <div class="diseases">
                     <div class="buttonColour brown"><a href="{{url_for('liver')}}">Check Liver</a></div>
                 </div>
@@ -113,62 +126,65 @@
 
         <div class="flex2">
             <div class="diseasecard ">
-                <img class="diseaseCardImage" src="{{url_for('static',filename='../static/resources/diabetes.svg')}}" alt="">
+                <img class="diseaseCardImage" src="{{url_for('static',filename='../static/resources/diabetes.svg')}}"
+                    alt="">
                 <div class="deseaseCardDescription">Diabetes Predictor</div>
-                <div class="deseaseCardDetail">Welcome to our Diabetes Predictor, an advanced tool designed to assess your risk of developing diabetes using intelligent algorithms and analysis. </div>
+                <div class="deseaseCardDetail">Welcome to our Diabetes Predictor, an advanced tool designed to assess
+                    your risk of developing diabetes using intelligent algorithms and analysis. </div>
                 <div class="diseases">
                     <div class="buttonColour blue"><a href="{{url_for('diabetes')}}">Check Diabetes</a></div>
                 </div>
             </div>
             <div class="blackdivider"></div>
             <div class="diseasecard ">
-                <img class="diseaseCardImage" src="{{url_for('static',filename='../static/resources/Loading.svg')}}" alt="">
+                <img class="diseaseCardImage" src="{{url_for('static',filename='../static/resources/Loading.svg')}}"
+                    alt="">
                 <div class="deseaseCardDescription">More Dignostics Models Under Work!</div>
             </div>
         </div>
 
-        
-       
-        
+
+
+
     </div>
-    
+
 
     <div class="dividergradient" id="dividergradient"></div>
-   
-  <!-- javascriptFuntion  News API-->
-    
-    <div> 
-    <script>
-      async function f() {
-        const res = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=4578f91f961d4f7a9760456c71eafc34`);
-        const data = await res.json();
-        let news = [];
-        news = data.articles;
-        const Title1 = document.getElementsByClassName('newstile1')[0].innerHTML = news[0].title;
-        const Link1 = document.getElementsByClassName('link1')[0];
-        Link1.href = news[0].url;
-        const Title2 = document.getElementsByClassName('newstilesmall2')[0].innerHTML = news[1].title;
-        const Link2 = document.getElementsByClassName('link2')[0];
-        Link2.href = news[1].url;
-        const Title3 = document.getElementsByClassName('newstile3')[0].innerHTML = news[2].title;
-        const Link3 = document.getElementsByClassName('link3')[0];
-        Link3.href = news[2].url;
-        const Title4 = document.getElementsByClassName('newstilesmall4')[0].innerHTML = news[3].title;
-        const Link4 = document.getElementsByClassName('link4')[0];
-        Link4.href = news[3].url;
-        const Title5 = document.getElementsByClassName('newstile5')[0].innerHTML = news[4].title;
-        const Link5 = document.getElementsByClassName('link5')[0];
-        Link5.href = news[4].url;
-        const Title6 = document.getElementsByClassName('newstilesmall6')[0].innerHTML = news[5].title;
-        const Link6 = document.getElementsByClassName('link6')[0];
-        Link6.href = news[5].url;
 
-      }
-      window.onload = function () {
-        f();
-      };
-    </script>
-    </div> 
+    <!-- javascriptFuntion  News API-->
+
+    <div>
+        <script>
+            async function f() {
+                const res = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=4578f91f961d4f7a9760456c71eafc34`);
+                const data = await res.json();
+                let news = [];
+                news = data.articles;
+                const Title1 = document.getElementsByClassName('newstile1')[0].innerHTML = news[0].title;
+                const Link1 = document.getElementsByClassName('link1')[0];
+                Link1.href = news[0].url;
+                const Title2 = document.getElementsByClassName('newstilesmall2')[0].innerHTML = news[1].title;
+                const Link2 = document.getElementsByClassName('link2')[0];
+                Link2.href = news[1].url;
+                const Title3 = document.getElementsByClassName('newstile3')[0].innerHTML = news[2].title;
+                const Link3 = document.getElementsByClassName('link3')[0];
+                Link3.href = news[2].url;
+                const Title4 = document.getElementsByClassName('newstilesmall4')[0].innerHTML = news[3].title;
+                const Link4 = document.getElementsByClassName('link4')[0];
+                Link4.href = news[3].url;
+                const Title5 = document.getElementsByClassName('newstile5')[0].innerHTML = news[4].title;
+                const Link5 = document.getElementsByClassName('link5')[0];
+                Link5.href = news[4].url;
+                const Title6 = document.getElementsByClassName('newstilesmall6')[0].innerHTML = news[5].title;
+                const Link6 = document.getElementsByClassName('link6')[0];
+                Link6.href = news[5].url;
+
+            }
+            window.onload = function () {
+                f();
+            };
+        </script>
+    </div>
 
 
     <div class="newsletter" id="blog">
@@ -182,10 +198,8 @@
                 <div class="newstile1">
                 </div>
                 <!-- <div class="newsdesc">subtext...</div> -->
-                <div  class="buttonsmall">
-                    <a class="link1"
-                    href=""
-                    target="_blank">Read</a>
+                <div class="buttonsmall">
+                    <a class="link1" href="" target="_blank">Read</a>
                 </div>
             </div>
 
@@ -195,9 +209,7 @@
                 </div>
                 <div class="newstilesmall2"></div>
                 <!-- <div class="newsdesc">subtext...</div> -->
-                <div class="buttonsmall"><a class="link2"
-                        href=""
-                        target="_blank">Read</a>
+                <div class="buttonsmall"><a class="link2" href="" target="_blank">Read</a>
                 </div>
             </div>
 
@@ -207,12 +219,10 @@
                 </div>
                 <div class="newstile3"></div>
                 <!-- <div class="newsdesc">subtext...</div> -->
-                <div class="buttonsmall"><a class="link3"
-                        href=""
-                        target="_blank">Read</a></div>
+                <div class="buttonsmall"><a class="link3" href="" target="_blank">Read</a></div>
             </div>
 
-        
+
         </div>
         <div class="newscontainerlower">
 
@@ -222,9 +232,7 @@
                 </div>
                 <div class="newstilesmall4"></div>
                 <!-- <div class="newsdesc">subtext...</div> -->
-                <div class="buttonsmall"><a class="link4"
-                        href=""
-                        target="_blank">Read</a></div>
+                <div class="buttonsmall"><a class="link4" href="" target="_blank">Read</a></div>
             </div>
 
             <div class="newscardbig up30">
@@ -233,9 +241,7 @@
                 </div>
                 <div class="newstile5"> </div>
                 <!-- <div class="newsdesc">subtext...</div> -->
-                <div class="buttonsmall"><a  class="link5"
-                        href=""
-                        target="_blank">Read</a></div>
+                <div class="buttonsmall"><a class="link5" href="" target="_blank">Read</a></div>
             </div>
 
             <div class="newscardsmall">
@@ -244,19 +250,19 @@
                 </div>
                 <div class="newstilesmall6"></div>
                 <!-- <div class="newsdesc">subtext...</div> -->
-                <div class="buttonsmall"><a class="link6"
-                        href=""
-                        target="_blank">Read</a></div>
+                <div class="buttonsmall"><a class="link6" href="" target="_blank">Read</a></div>
             </div>
         </div>
         <div class="dividergradientBW" id="dividergradientBW"></div>
         <div class="diseaseCarousal">
-            <div class="headerinnovation">Lorem ipsum dolor sit amet. <span>NEXT</span>?</div>
+            <div class="headerinnovation">We are working on more diseases. This is a BETA section for testing</div>
             <div class="flex3">
                 <div class="diseasecard_small">
-                    <img class="diseaseCardImage_small" src="{{url_for('static',filename='../static/resources/Feaver.svg')}}" alt="">
+                    <img class="diseaseCardImage_small"
+                        src="{{url_for('static',filename='../static/resources/Feaver.svg')}}" alt="">
                     <div class="deseaseCardDescription_small">Covid Detector</div>
-                    <div class="deseaseCardDetail_small">Welcome to our COVID Detector, an advanced tool leveraging machine learning technology to assist in identifying potential cases of COVID-19. </div>
+                    <div class="deseaseCardDetail_small">Welcome to our COVID Detector, an advanced tool leveraging
+                        machine learning technology to assist in identifying potential cases of COVID-19. </div>
                     <div class="diseases">
                         <div class="cardbutton_small">
                             <a href="{{url_for('covid')}}">Check COVID</a>
@@ -265,9 +271,12 @@
                 </div>
                 <div class="blackdivider"></div>
                 <div class="diseasecard_small ">
-                    <img class="diseaseCardImage_small" src="{{url_for('static',filename='../static/resources/Asd.svg')}}" alt="">
+                    <img class="diseaseCardImage_small"
+                        src="{{url_for('static',filename='../static/resources/Asd.svg')}}" alt="">
                     <div class="deseaseCardDescription_small">Autisum Spectrum Disorder</div>
-                    <div class="deseaseCardDetail_small">Welcome to our Autism Spectrum Disorder (ASD) Detector, a powerful tool designed to assist in the early identification of potential ASD traits in individuals.</div>
+                    <div class="deseaseCardDetail_small">Welcome to our Autism Spectrum Disorder (ASD) Detector, a
+                        powerful tool designed to assist in the early identification of potential ASD traits in
+                        individuals.</div>
                     <div class="diseases">
                         <div class="cardbutton_small"><a href="{{url_for('ASD')}}">Check ASD</a></div>
                     </div>
@@ -281,77 +290,88 @@
         </div> -->
         <div class="innovation_section">
 
-                <div class="headerinnovation">What's <span>NEXT</span>?</div>           
-                <div class="thought_container">
-                    <div class="number">1</div>
-                    <div class="verticalline">
-                        <div class="thought_header">
-                            Simplifying the input Features and Diversifying our solution!
-                        </div>
-                        <div class="thought_subtext">
-                            The main objective is to create a more scalable, robust and evolving model.<br>The present model we made do predict the heart disease but the input parameter at present are not completely elementary. There are a few fields for which you need a few checkups. We want to keep simplifying the input parameters so that we can reach out to more and more people and make better user-experience. We also do plan to make more such model for other disease prediction.
-                        </div>
+            <div class="headerinnovation">What's <span>NEXT</span>?</div>
+            <div class="thought_container">
+                <div class="number">1</div>
+                <div class="verticalline">
+                    <div class="thought_header">
+                        Simplifying the input Features and Diversifying our solution!
                     </div>
-                
+                    <div class="thought_subtext">
+                        The main objective is to create a more scalable, robust and evolving model.<br>The present model
+                        we made do predict the heart disease but the input parameter at present are not completely
+                        elementary. There are a few fields for which you need a few checkups. We want to keep
+                        simplifying the input parameters so that we can reach out to more and more people and make
+                        better user-experience. We also do plan to make more such model for other disease prediction.
+                    </div>
                 </div>
-                <div class="fleximage">
-                    <div class="imagecard_ideasec">
+
+            </div>
+            <div class="fleximage">
+                <div class="imagecard_ideasec">
                     <img src="{{url_for('static',filename='../static/resources/Doctors-cuate.svg')}}">
-                    </div>
-            
-                    <div class="thought_container2">
+                </div>
+
+                <div class="thought_container2">
                     <div class="number">2</div>
                     <div class="verticalline">
                         <div class="thought_header">A self learning MODEL!</div>
                         <div class="thought_subtext2">
-                        By asking user for data and adding the right ones into our model we want to increase our training data. By increasing our dataset we can keep tuning the ML model. This will make our project robust scalable therby an ever evolving medical health detector/predictor which can become the first step before the costly hospital option.
+                            By asking user for data and adding the right ones into our model we want to increase our
+                            training data. By increasing our dataset we can keep tuning the ML model. This will make our
+                            project robust scalable therby an ever evolving medical health detector/predictor which can
+                            become the first step before the costly hospital option.
                         </div>
                     </div>
                 </div>
-        
+
+            </div>
+
+
+
         </div>
 
+        <footer>
+            <div class="footer-content">
+                <h3>DiagnoSys.co</h3>
+                <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+                <p>
+                    <a href="https://github.com/ITER-SIH/Team-54">
+                        Want to contribute ?
+                        <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+                    </a>
+                </p>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav,
+                        </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a
+                            href=https://github.com/The-Prithwiraj06>Prithwiraj. </a></span></p>
+            </div>
+        </footer>
 
-       
-    </div>
+        <script type="text/javascript">
+            window.addEventListener("scroll", function () {
+                var nav = document.querySelector("nav");
+                nav.classList.toggle("sticky", window.scrollY > 0);
+            })
 
-    <footer>
-        <div class="footer-content">
-            <h3>DiagnoSys.co</h3>
-            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
-            <p>
-              Want to contribute ? 
-              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
-            </p>
-        </div>
-        <div class="footer-bottom">
-          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj. </a ></span></p>
-        </div>
-    </footer>
+        </script>
 
-    <script type ="text/javascript"> 
-        window.addEventListener("scroll",function(){ 
-            var nav = document.querySelector("nav"); 
-            nav.classList.toggle("sticky",window.scrollY > 0); 
-        }) 
-       
-    </script>
-     
-      
-      
-    <script>
-            const button = document.querySelector("#search");   
+
+
+        <script>
+            const button = document.querySelector("#search");
             const displaybox = document.querySelector(".searchresult");
             let searchinput = document.querySelector("#searchinput").value;
             '{% if pred == 1 %}'
             window.addEventListener("load",
-            (event)=>{
-                displaybox.classList.remove('diplay_none');
-            })
+                (event) => {
+                    displaybox.classList.remove('diplay_none');
+                })
             '{% endif %}'
-    
+
             // button.addEventListener('click',function(){
-                
+
             //     if(searchinput != null || searchinput != undefined){
             //         displaybox.classList.toggle('diplay_none');
             //        console.log(searchinput);
@@ -359,11 +379,12 @@
             //     }
 
             // })
-            function backFunction(){
+            function backFunction() {
                 displaybox.classList.add('diplay_none');
                 '{% set pred = 0 %}'
             }
-    </script>
+        </script>
 
 </body>
+
 </html>
