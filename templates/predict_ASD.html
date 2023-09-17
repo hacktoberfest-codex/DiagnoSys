@@ -1,0 +1,156 @@
+
+
+{% if pred == 1 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/predict_heart.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    {% if message %}
+    <script>
+      let p = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(p);
+        }, false);
+    </script>
+    {% endif %}
+    
+    <nav>
+        <div class="navcontainer">
+            <a class="back button " href="{{ url_for('main') }}">Back to Home</a></div>
+        </div>
+        <div class="navcontainer">
+            <div class="logocontainer">
+                <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+                <div class="logo">Autism Sprectrum Disorder</div>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="headerred">SORRY! You might need a  <span>Checkup</span>.</div>
+        <div class="subtext">
+            Oopss!! There are chances you might be affected with Autism Sprectrum Disorder . Go get your clinical tests done and consult with your doctor asap. 
+             <div class="pointcontainer">
+                
+            </div>
+            <div class="linksred">
+                For more informatiion related to diagnosis and treatment tips you could follow the<a href="https://www.mayoclinic.org/diseases-conditions/autism-spectrum-disorder/diagnosis-treatment/drc-20352934" target="_blank"> link<sup>*</sup> </a>.<br>
+                Also if you want we can email you few tips by clicking the Email button...
+                <form action="{{ url_for('email_asd_neg') }}" method="POST">
+                    <button class="button">Send email.</button>
+                </form>
+            </div>
+            
+          
+         </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>MedAware.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+            <p>
+              Want to contribute ? 
+              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/VaishaliRajpal28>PRITHWI. </a ></span></p>
+        </div>
+    </footer>
+  
+    
+</body>
+</html>
+
+
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/predict_heart.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    {% if message %}
+    <script>
+      let q = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(q);
+        }, false);
+    </script>
+    {% endif %}
+    <nav>
+        <div class="navcontainer">
+            <a class="back button " href="{{ url_for('main') }}">Back to Home</a></div>
+        </div>
+        <div class="navcontainer">
+            <div class="logocontainer">
+                <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+                <div class="logo">MedAware</div>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="headergreen">GREAT! you are in good <span>Health</span>.</div>
+        <div class="subtext">
+            Kudos! Your heart seems happy and light. You could follow the below suggestions for a better stressfree lifestyle : <br> 
+            <div class="pointcontainergreen">
+                <div class="points">1.<b>Get regular exercise.</b> Just 30 minutes of walking every day can help boost your mood and improve your health. Small amounts of exercise add up, so don’t be discouraged if you can’t do 30 minutes at one time.</div>
+                <div class="points">2. <b>Eat healthy, regular meals and stay hydrated.</b> A balanced diet and plenty of water can improve your energy and focus throughout the day. Also, limit caffeinated beverages such as soft drinks or coffee.</div>
+                <div class="points">3. <b>Practice gratitude.</b> Remind yourself daily of things you are grateful for. Be specific. Write them down at night, or replay them in your mind.</div>
+                <div class="points">4. <b>Make sleep a priority.</b> Stick to a schedule, and make sure you’re getting enough sleep. Blue light from devices and screens can make it harder to fall asleep, so reduce blue light exposure from your phone or computer before bedtime..</div>
+                <div class="points">5. <b>Try a relaxing activity.</b> Explore relaxation or wellness programs or apps, which may incorporate meditation, muscle relaxation, or breathing exercises. Schedule regular times for these and other healthy activities you enjoy such as journaling.</div>
+            </div>
+            <div class="linksgreen">
+                For more such related tips you could follow the<a href="https://www.health.harvard.edu/healthbeat/10-small-steps-for-better-heart-health" target="_blank"> link<sup>*</sup> </a>.<br>
+                Also if you want we can email you few tips by clicking the Email button...
+                <form action="{{ url_for('email_asd_pos') }}" method="POST">
+                    <button >Send email.</button>
+                </form>
+            </div>
+            
+          
+         </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>MedAware.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+            <p>
+              Want to contribute ? 
+              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj. </a ></span></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+{% endif %}
+
+
