@@ -30,7 +30,7 @@ a:hover{
 .navElemContainers + .middlenav{
     display:flex;
     min-width: 150px;
-    width:300px;
+    width:350px;
     font-size: 20px;
     align-items: center;
     justify-content: space-between;
