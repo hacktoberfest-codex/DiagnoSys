@@ -1,0 +1,157 @@
+
+
+{% if pred == 1 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/predict_heart.css')}}"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    {% if message %}
+    {{ pred }}
+    <script>
+      let p = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(p);
+        }, false);
+    </script>
+    {% endif %}
+    
+    <nav>
+        <div class="navcontainer">
+            <a class="back button " href="{{ url_for('main') }}">Back to Home</a></div>
+        </div>
+        <div class="navcontainer">
+            <div class="logocontainer">
+                <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+                <div class="logo">MedAware</div>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="headerred">SORRY! You might need a  <span>Checkup</span>.</div>
+        <div class="subtext">
+            Oopss!! There are chances you might be afflicted with a heart disease . Go get your clinical tests done and consult with your doctor asap. You could follow the given link for further 
+             <div class="pointcontainer">
+                
+            </div>
+            <div class="linksred">
+                For more informatiion related to diagnosis and treatment tips you could follow the<a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/diagnosis-treatment/drc-20353124" target="_blank"> link<sup>*</sup> </a>.<br>
+                Also if you want we can email you few tips by clicking the Email button...
+                <form action="{{ url_for('email_heart_neg') }}" method="POST">
+                    <button>Send email.</button>
+                </form>
+            </div>
+            
+          
+         </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>MedAware.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+            <p>
+              Want to contribute ? 
+              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/VaishaliRajpal28>PRITHWI. </a ></span></p>
+        </div>
+    </footer>
+  
+  
+    
+</body>
+</html>
+
+
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/predict_heart.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    {% if message %}
+    <script>
+      let q = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(q);
+        }, false);
+    </script>
+    {% endif %}
+    <nav>
+        <div class="navcontainer">
+            <a class="back button " href="{{ url_for('main') }}">Back to Home</a></div>
+        </div>
+        <div class="navcontainer">
+            <div class="logocontainer">
+                <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+                <div class="logo">MedAware</div>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="headergreen">GREAT! you heart is in good <span>Health</span>!!</div>
+        <div class="subtext">
+            Kudos! Your heart seems healthy. You could follow the below suggestions for further strengthening your heart : <br> 
+            <div class="pointcontainergreen">
+                <div class="points">1. Eat healthy.</div>
+                <div class="points">2. Get active.</div>
+                <div class="points">3. Quit Smoking.</div>
+                <div class="points">4. Stay at a healthy weight.</div>
+                <div class="points">5. Control your cholesterol and blood pressure.</div>
+            </div>
+            <div class="linksgreen">
+                For more such related tips you could follow the<a href="https://www.health.harvard.edu/healthbeat/10-small-steps-for-better-heart-health" target="_blank"> link<sup>*</sup> </a>.<br>
+                Also if you want we can email you few tips by clicking the Email button...
+                <form action="{{ url_for('email_heart_pos') }}" method="POST">
+                    <button>Send email.</button>
+                </form>
+            </div>
+            
+          
+         </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>MedAware.co</h3>
+            <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+            <p>
+              Want to contribute ? 
+              <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+            </p>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj. </a ></span></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+{% endif %}
+
+
