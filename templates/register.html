@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Register</title>
+    <style>
+      :root{
+    --mainred: #DA1212;
+    --mainblue: #041562; 
+    --maindgreen:#40a879;
+    --maingreen:#50CB93;
+    --bg-black: #232b2b;
+
+    --bg-light :#DCE1DE;
+    --fontcolor:rgb(240, 239, 238);
+    --fontcolordark: #1F2421;
+
+
+    /* // Variables */
+    --general-color: #F5F5F5;
+    --contrast-color: #E2E2E2;
+    --background: #EE2222;
+    /* --background2: #e33423; */
+    --background2: #eb56116c;
+    --transition-duration: .3s;
+    /* // --general-color: #EE2222;
+    // --contrast-color: rgb(204, 23, 23);
+    // --background: #F5F5F5;
+    // --background2: #E2E2E2; */
+    --background-gradient: linear-gradient(-360deg, var(--background2), var(--background), var(--background2));
+    /* // Presets */
+    
+  }
+
+
+      body{
+        font-family: 'Montserrat', sans-serif;
+        height:100vh;
+        overflow: hidden;
+        background:#DCE1DE;
+        
+      }
+
+      .image{
+       
+        margin-top:80px;
+        margin-right: 150px;
+      }
+      input[type="submit"]:hover{
+        transition: all 0.5s ease-in-out;
+        scale: 1.02;
+        background-color: var( --maindgreen);
+        border:2px solid var(--maingreen);
+      }
+      .card{
+        margin-top: 100px;
+      }
+    
+      input[type="submit"]{
+        background:var( --maingreen);
+        transition: all 0.5s ease-in-out;
+        width: 100%; 
+        height: 48px;
+        border: none;
+        border-radius: 9px;
+        cursor: pointer;
+        font-weight: 500;
+        color: #fbfcfb;
+        font-size: 19px; 
+        margin-bottom: 5px;
+      }
+
+      .br9{
+        border-radius: 19px;
+      }
+      
+
+
+      .texto {
+          
+          transition: var(--transition-duration);
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column; 
+      }
+          h1 {
+              margin: 10px 0;
+              letter-spacing: -.15rem;
+              font-size: 2rem;
+              font-weight: 500;
+
+          }
+          .containerN{
+                  margin: 1rem;
+                  position: relative;
+
+          }         
+          .word{
+                      text-rendering: optimizeLegibility!important;
+                      white-space: pre;
+                      margin-top: 20px;
+                      margin-left: 240px;
+                      color: var(--bg-black);
+                      
+                      font-family: 'Rampart One', cursive;
+                      letter-spacing: 2px;
+                      font-size: 4rem;
+                      font-style: italic;
+                      font-weight: 800;
+                      position: absolute;
+                      transform: translate(-50%, -10%);
+                      opacity: 0;
+                      
+                      
+                      top: 0;
+            }  
+                  
+        
+      
+
+      .letter {
+          
+        text-rendering: optimizeLegibility!important;
+        display: inline-block;
+        position: relative;
+        transform: translateZ(25px);
+        transform-origin: 50% 50% 25px;
+      }
+      
+      .letter.out {
+        transform: rotateX(90deg);
+        transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+      
+      .letter.behind {
+        transform: rotateX(-90deg);
+      }
+      
+      .letter.in {
+        transform: rotateX(0deg);
+        transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+        @-o-keyframes opacity {
+          0%, 100% {opacity:0;}
+          50% {opacity:1;}
+        }
+        
+        @-moz-keyframes change {
+          0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+          16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+          33.32%,45.98% {transform:translate3d(0,-50%,0);}
+          49.98%,62.64% {transform:translate3d(0,-75%,0);}
+          66.64%,79.3% {transform:translate3d(0,-50%,0);}
+          83.3%,95.96% {transform:translate3d(0,-25%,0);}
+        }
+  
+  
+
+          @keyframes gradient {
+            0% {
+              background-position-y: 100vh;
+            }
+            100% {
+              background-position-y: -100vh;
+            }
+          }
+
+          @keyframes grain {
+            0% { -webkit-transform: translate(-10%, 10%); -moz-transform: translate(-10%, 10%); transform: translate(-10%, 10%) }
+            10% { -webkit-transform: translate(-25%, 0%); -moz-transform: translate(-25%, 0%); transform: translate(-25%, 0%) }
+            20% { -webkit-transform: translate(-30%, 10%); -moz-transform: translate(-30%, 10%); transform: translate(-30%, 10%) }
+            30% { -webkit-transform: translate(-30%, 30%); -moz-transform: translate(-30%, 30%); transform: translate(-30%, 30%) }
+            40% { -webkit-transform: translate(); -moz-transform: translate(); transform: translate() }
+            50% { -webkit-transform: translate(-15%, 10%); -moz-transform: translate(-15%, 10%); transform: translate(-15%, 10%) }
+            60% { -webkit-transform: translate(-20%, 20%); -moz-transform: translate(-20%, 20%); transform: translate(-20%, 20%) }
+            70% { -webkit-transform: translate(-5%, 20%); -moz-transform: translate(-5%, 20%); transform: translate(-5%, 20%) }
+            80% { -webkit-transform: translate(-25%, 5%); -moz-transform: translate(-25%, 5%); transform: translate(-25%, 5%) }
+            90% { -webkit-transform: translate(-30%, 25%); -moz-transform: translate(-30%, 25%); transform: translate(-30%, 25%) }
+            100% { -webkit-transform: translate(-10%, 10%); -moz-transform: translate(-10%, 10%); transform: translate(-10%, 10%) }
+          }
+      
+
+    </style>
+  </head>
+  <body class="bg-nav">
+    {% if message %}
+    <script>
+      let p = "{{message}}"
+      window.addEventListener('load', 
+        function() { 
+          alert(p);
+        }, false);
+    </script>
+    {% endif %}
+    <nav class ='navbar bg-nav'>
+      <a href="" class="navbar-brand test-light"></a>
+  </nav>
+
+  <div class="container ">
+      <div class="row  ">
+        <div class="col-md-7 ">
+               
+          <h1 class="mt-100" 
+              style="font-size:60px;
+                    font-weight:400;
+                    color:#1F2421;"
+           >
+          Welcome to 
+          <span style="
+          font-family: 'Rampart One', cursive;
+                    font-size:60px;
+                    font-weight:700;
+                    color: #40a879;
+                    font-style: italic;"
+          > 
+          MedAware
+          </span>
+          </h1>
+          <div class="texto">
+              <h1>
+                  We bring to You 
+                  <br> 
+                  <span class="containerN">
+                      <span class="word">Better Health.</span>
+                      <span class="word escrit">More Awareness.</span>
+                      <span class="word">Free checkups.</span>
+                      
+                  </span> 
+              </h1>
+          </div>
+          <div class="image"><img src="{{url_for('static',filename='../static/resources/loginimg.svg')}}"" alt=""></div>
+        </div>
+            <div class="col-md-5">
+                <div class="card mt-100">
+                    <div class="card-body">
+                        <form action="" class="form" method ="post" action="/register" >
+                            
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" name="username"><br>
+                            <label for="">Create a Password</label><br>
+                            <input type="password" class="form-control" name="password"><br>
+                            <label for="">Enter Password again</label><br>
+                            <input type="password" class="form-control" name="cpassword"><br><br>
+                            <input type="submit"  value="Register" >
+                        </form>
+                        <p>Already a member? <a href="/" style="color:#50CB93;">Login Here</a></p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+
+        var words = document.getElementsByClassName('word');
+        var wordArray = [];
+        var currentWord = 0;
+
+        words[currentWord].style.opacity = 1;
+        for (var i = 0; i < words.length; i++) {
+          splitLetters(words[i]);
+        }
+
+        function changeWord() {
+          var cw = wordArray[currentWord];
+          var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+          for (var i = 0; i < cw.length; i++) {
+            animateLetterOut(cw, i);
+          }
+          
+          for (var i = 0; i < nw.length; i++) {
+            nw[i].className = 'letter behind';
+            nw[0].parentElement.style.opacity = 1;
+            animateLetterIn(nw, i);
+          }
+          
+          currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
+        }
+
+        function animateLetterOut(cw, i) {
+          setTimeout(function() {
+            cw[i].className = 'letter out';
+          }, i*45);
+        }
+
+        function animateLetterIn(nw, i) {
+          setTimeout(function() {
+            nw[i].className = 'letter in';
+          }, 340+(i*45));
+        }
+
+        function splitLetters(word) {
+          var content = word.innerHTML;
+          word.innerHTML = '';
+          var letters = [];
+          for (var i = 0; i < content.length; i++) {
+            var letter = document.createElement('span');
+            letter.className = 'letter';
+            letter.innerHTML = content.charAt(i);
+            word.appendChild(letter);
+            letters.push(letter);
+          }
+          
+          wordArray.push(letters);
+        }
+
+        changeWord();
+        setInterval(changeWord, 3500);
+
+
+    </script>
+  </body>
+</html>
