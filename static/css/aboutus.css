@@ -1,0 +1,368 @@
+
+
+:root{
+    --mainred: #DA1212;
+    --mainblue: #041562; 
+    --maindgreen:#40a879;
+    --maingreen:#50CB93;
+    --bg-black: #232b2b;
+
+    --bg-light :#DCE1DE;
+    --fontcolor:rgb(240, 239, 238);
+    --fontcolordark: #1F2421;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color: var(--bg-light);
+}
+.navElemContainers + .middlenav{
+    display:flex;
+    min-width: 150px;
+    width:450px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
+    color:  var(--fontcolordark);
+}
+.navElemContainers + .lastnav{
+    display:flex;
+}
+.lastnav div{
+    margin-left: 10px;
+}
+.navElemContainers img{
+    z-index: 1;
+    width:50px;
+    height: 50px;
+    
+    margin-right: 90px;
+}
+.flexlogo{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+nav{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    transition: 0.6s;
+    padding: 40px 100px;  
+    z-index :69;
+}
+
+
+nav.sticky{
+    padding: 5px 100px;
+    opacity: 1;
+    background-color: var(--fontcolordark);
+   
+}
+.flexlogo{
+    margin-left:-100px;
+}
+.logo{
+    font-family: 'Rampart One', cursive;
+    z-index: 3;
+    margin-left: -100px;
+    font-size: 33px;
+    font-weight:900;
+    font-style: italic;
+    color:  var(--maindgreen);
+}
+.navItem a{
+    color: var(--bg-light);
+}
+.navItem{
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    font-family: 'Popins',sans-serif;
+    
+    font-size: 18px;
+    letter-spacing:0.5px;
+}
+.navItem:after{
+    content: " ";
+    position:absolute;
+    background-color: var(--maingreen);
+    height: 3px;
+    width: 0;
+    left:0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+
+.navItem:hover a{
+    color: var(--maindgreen);
+    font-weight: 700;
+    
+}
+.navItem:hover:after{
+    width: 100%;
+    transition: 0.5s;
+
+}
+.button{
+    display: flex;
+    align-items: center;
+    
+    padding:10px 15px ;
+    border:1px solid white;
+    border-radius: 4px;
+    /* background: linear-gradient(0.25turn,var(--maingreen), var(--mainblue)); */
+    background-color: var(--maindgreen);
+    max-width: 155px;
+    margin-top: 20px;
+    color: var(--fontcolor);
+    font-size: 17px;
+    font-weight:600;
+    transition: all 0.6s ease-in-out;
+   
+}
+
+.button:hover{
+    transition: all 0.5s ease-in-out;
+    font-style: italic;
+    scale: 1.02;
+    border:2px solid white;
+}
+
+.home{
+    margin-left: 40px;
+    margin-top: 50px;
+    width:100%;
+    display: flex;
+    justify-content:space-around;
+   
+}
+.subcontainer{ 
+    width: 48%;
+}
+.homeimage{
+    margin-top: 5vh;
+    width:70%;
+    z-index: 2;
+}
+.headerline{
+    font-size: 45px;
+    font-weight:800; 
+    color:  var(--fontcolordark);
+    width: 95%;
+
+}
+.headerline > span:nth-child(n){
+    font-style: italic;
+    text-shadow: 2px 2px 70px #4b4d4d;
+    background: -webkit-linear-gradient(0.30turn,var(--maingreen), var(--maindgreen));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text{
+    /* padding-left: 50px; */
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.subtext{
+    margin-top: 40px;
+    font-size: 20px;
+    width: 85%;
+    font-weight:500;
+    color:  var(--fontcolordark);
+    line-height: 30px;
+}
+.divider_thick{
+    width:300px;
+    height:10px;
+    border:0.5px solid white;
+    border-radius: 4px;
+    background: linear-gradient(0.25turn,var(--maingreen), var(--maindgreen));
+    animation: pulse 5s infinite;
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running; 
+}
+@keyframes pulse {
+    0% {
+        
+     width: 500px;
+    }
+    100% {
+        
+     width: 100px;
+    }
+}
+.membercontainer{
+    height: auto;
+    margin-top: 50px;
+    padding-left: 150px;
+    margin-bottom: 70px;
+}
+.headerlinesmall{
+    font-size: 35px;
+    font-style: italic;
+    font-weight:800; 
+    margin-bottom: 60px;
+    color:  var(--fontcolordark);
+    width: 95%;
+}
+.member_container{
+    display: flex;
+    flex-direction: row;
+    padding:40px 0 0 0;
+    position:relative;
+}
+
+.verticalline{
+    border-left: 1.5px solid var(--maingreen);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.number{
+    width: 250px;
+
+    font-size:12rem;
+    
+    color: var(--fontcolordark); 
+    font-weight:700;
+    margin-right: 20px;
+}
+
+
+.member_header{
+    
+    font-size: 30px;
+    font-weight:800; 
+    color:  var(--fontcolordark);
+    margin: 10px 0;
+}
+.member_subtext{
+    font-size: 20px;
+    font-weight:400; 
+    width: 85%;
+    color:  var(--fontcolordark);
+}
+a{
+    text-decoration: none; 
+    color: var(--fontcolordark);
+}
+
+
+/* footer code starts here */
+footer{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;
+    margin-top: 80px;
+    background:#111;
+    height:280px;
+    width:100vw;
+    font-family: "";
+    color:#fff;
+    
+}
+.footer-content{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-bottom{
+    background: #000;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+.footer-content h3{
+    font-size: 22px;
+    font-weight:400;
+    color:  var(--bg-light);
+    
+}
+
+.footer-content p{
+    max-width: 500px;
+    margin: 20px auto;
+    line-height: 28px;
+    font-size:14px;
+
+}
+.github{ 
+    width:20px;
+    height: 20px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin:1rem 0 3rem 0;
+
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+
+}
+.socials a i{
+    font-size:1.1rem;
+}
+.socials a:hover i{
+    color:aqua;
+}
+
+
+.footer-bottom p{
+    font-size:14px;
+    word-spacing:2px;
+    text-transform:capitalize;
+
+}
+.footer-bottom span{
+    
+    text-transform: uppercase;
+    opacity: 1;
+    font-weight: 200;
+}
+.footer-bottom span a{
+    text-decoration: none;
+    color: #fff;
+    opacity: 1;
+}
+.footer-bottom span a:hover{
+    color: #fff;
+    opacity: .7;
+}
