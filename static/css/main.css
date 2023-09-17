@@ -579,6 +579,7 @@ select{
     font-size: 50px;
     font-weight:800; 
     color:  var(--fontcolordark);
+    padding-left:37px;
    
 }
 .headerinnovation span{
@@ -794,7 +795,7 @@ to other pages section
 
 .diseaseCarousal{
     margin: 80px 0 20px 0; 
-    height: 500px;
+    height: 600px;
     weight: 100%;
     background: var(--maingreen);
     display: flex;
