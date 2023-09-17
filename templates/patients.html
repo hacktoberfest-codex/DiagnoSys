@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/table.css">
     <title>Document</title>
 </head>
 <body>
-   
-        {% for patient in patients %}
-            <p class= {{ patient.id }} id = {{ patient.email }} onclick="redirect(event)" id="x">{{ patient.name }}</p>
-
-        {% endfor %}
+        <table>
+            <tr>
+              <th><div>Name</div></th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Age</th>
+              <th>liver_disease</th>
+              <th>heart_disease</th>
+              <th>diabetes</th>
+            </tr>
+            
+            {% for patient in patients %}
+        <tr>
+            <td><p class= {{ patient.id }} id = {{ patient.name }} onclick="redirect(event)" id="x">{{ patient.name }}</p></td>
+            <td><p id="x">{{ patient.email }}</p></td>
+            <td><p id="x">{{ patient.phone }}</p></td>
+            <td><p id="x">{{ patient.age }}</p></td>
+            <td><p id="x">{{ patient.liver_disease }}</p></td>
+            <td><p id="x">{{ patient.heart_disease }}</p></td>
+            <td><p id="x">{{ patient.diabetes }}</p></td>
+        </tr>
+            {% endfor %}
+          </table>
 
        <script>
     
