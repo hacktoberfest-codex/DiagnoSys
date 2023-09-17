@@ -25,7 +25,7 @@
                 
                 {% for patient in patients %}
                 <tr>
-                    <td><div class= {{ patient.id }} id = {{ patient.name }} onclick="redirect(event)" id="x">{{ patient.name }}</div></td>
+                    <td><div class= {{ patient.id }} id = {{ patient.email }} onclick="redirect(event)" >{{ patient.name }}</div></td>
                     <td><div id="x">{{ patient.email }}</div></td>
                     <td><div id="x">{{ patient.phone }}</div></td>
                     <td><div id="x">{{ patient.age }}</div></td>
@@ -60,14 +60,15 @@
           
     
             function redirect(e){
+                
                 console.log(e)
                 const classvar = e.target.className;
                 const email = e.target.id
-                console.log(classvar)
+                console.log(email)
                 fetch('http://localhost:5002/main',
                 {
                     headers:{
-                        'content-type':'application/json'
+                        'Content-Type':'application/json'
                     },
                     method : 'post',
                     body: JSON.stringify({
@@ -76,6 +77,8 @@
                     })
                 }).then(
                     (resp)=>{
+                        
+                        
                         window.location.href='http://localhost:5002/main'
                     }
                 )

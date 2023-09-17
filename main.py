@@ -171,16 +171,20 @@ def register():
     else:
         return render_template('register.html')
 
+from flask import jsonify
 
 @app.route('/main', methods=['GET', 'POST'])
 def main():
+
     # render_template('main.html')
     if request.method == 'GET':
+        print('get')
         return render_template("main.html")
 
     else:
+        
         try:
-            print(request.get_json)
+            print(request.get_json())
             patient_id = request.json['patient']
 
             global patient_email
@@ -192,8 +196,8 @@ def main():
             print(patient_email)
             session["patient_id"] = patient_id
 
-            return render_template('main.html')
-
+            #return render_template('main.html')
+            return {"h":"me"}
             # result = wikipedia.summary(query,sentences = 10)
             # return render_template("main.html",result=result,query = query, pred = 1)
 
