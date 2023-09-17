@@ -19,12 +19,7 @@
     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
   />
     <title>Document</title>
-    <style>
-        footer {
-          position: fixed;
-          bottom: 0;
-        }
-      </style>
+    
 </head>
 <body>  
             {% if message %}
@@ -47,7 +42,7 @@
             
             </div>
             <div class="navElemContainers">
-            <div class="buttonColour red"><a href="{{url_for('logout')}}">Log Out</a></div>
+            <div class="buttonColour"><a href="{{url_for('logout')}}">Log Out</a></div>
             
             </div>
         </nav>
