@@ -15,6 +15,116 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+
+a{
+    text-decoration: none;
+    color: #a0a0a0;
+    cursor: pointer;
+}
+a:hover{
+    color:var(--maingreen);
+}
+.navElemContainers + .middlenav{
+    display:flex;
+    min-width: 150px;
+    width:300px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
+    color:  var(--fontcolordark);
+}
+.navElemContainers img{
+    z-index: 1;
+    width:50px;
+    height: 50px;
+    margin-right: 90px;
+}
+.flexlogo{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    transition: 0.6s;
+    padding: 40px 0px;  
+    z-index :69;
+}
+.endnav{
+    margin-top:-20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+nav.sticky{
+    padding: 5px 40px;
+    opacity: 1;
+    background-color: var(--fontcolordark);
+   
+}
+.logo{
+    font-family: 'Rampart One', cursive;
+    z-index: 3;
+    margin-left: -100px;
+    font-size: 33px;
+    font-weight:900;
+    font-style: italic;
+    color:  var(--maindgreen);
+}
+
+
+.navItem{
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    font-family: 'Popins',sans-serif;
+    color: #a0a0a0;
+    font-size: 18px;
+    letter-spacing:0.5px;
+}
+html{
+    scroll-behavior: smooth;
+}
+.navItem:after{
+    content: " ";
+    position:absolute;
+    background-color: var( --maingreen);
+    height: 3px;
+    width: 0;
+    left:0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+.navItem:hover a{
+    color: var(--maindgreen);
+    font-weight: 700;
+    
+}
+
+.navItem:hover:after{
+    width: 100%;
+    transition: 0.5s;
+
+}
+
+
+
+
+
 th{
     background:#232b2b;
     height: 70px;
@@ -27,7 +137,7 @@ th{
 }
 
 td *{
-    background:#DCE1DE;
+    background:var(--maingreen);
     padding: 0 10px;
     height: 50px;
    
@@ -41,8 +151,10 @@ td *{
 
 
 .allpatientpage_container{
+    padding-top: 20vh;
+    padding-bottom: 5vh;
     width: 100%;
-    background: var(--maingreen);
+    background: var(--bg-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,13 +174,63 @@ td *{
 .center
 {
     display:flex;
-    justify-content:space-evenly;
+    justify-content:center;
     align-items:center;
 
     
 }
-#temp
+/* #temp
 {
     position:relative;
     left:50px;
+} */
+
+.buttonColour{
+    display: flex;
+    align-items: center;
+    padding:10px 15px ;
+    border:2px solid var(--fontcolordark);
+    border-radius: 4px;
+    max-width: 250px;
+    font-size: 17px;
+    font-weight:600;
+    transition: all 0.6s ease-in-out;
+    z-index: 1;
+    background-color: var(--maingreen);
+   
+}
+.buttonColour a{
+    color:var(--bg-dark);
+}
+.buttonColour:hover a{
+    color:var(--maingreen);
+}
+
+.buttonColour:hover{
+    transition: all 0.5s ease-in-out;
+    scale: 1.02;
+    background-color: var( --bg-black);
+    border:2px solid var(--fontcolordark);
+  
+}
+.returncontainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 30vh;
+}
+.imagecontainer{
+    margin-top: 50px;
+    width: 50%;
+}
+
+.dividergradientBW{
+    width: 100%;
+    height:20px;
+    background: linear-gradient(-45deg, var(--bg-black), rgb(48, 210, 110), var(--maingreen), #41904F);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+   
+    
 }
