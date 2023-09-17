@@ -28,26 +28,26 @@
     />
     <title>Document</title>
     <style>
-      .upload{
+      .upload {
         margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
-      input{
+      input {
         padding: 5px;
-background: #f5f5f5;
-color: #333;
-border: none;
-height: 40px;
-outline: none;
-font-size: 16px;
-font-weight: 500 !important;
-margin: 8px 0;
-Letter-spacing: 1px;
-font-weight: 300;
+        background: #f5f5f5;
+        color: #333;
+        border: none;
+        height: 40px;
+        outline: none;
+        font-size: 16px;
+        font-weight: 500 !important;
+        margin: 8px 0;
+        letter-spacing: 1px;
+        font-weight: 300;
       }
-      label{
+      label {
         color: #a1a0a0;
       }
     </style>
@@ -62,7 +62,6 @@ font-weight: 300;
       </div>
       <div class="navElemContainers middlenav">
         <div class="navItem"><a href="{{url_for('main')}}">Home</a></div>
-        <div class="navItem"><a href="#news">Blogs</a></div>
         <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
       </div>
       <div class="navElemContainers endnav">
@@ -73,13 +72,33 @@ font-weight: 300;
     <div class="br9 upload card-body">
       <form action="/uploadpatient" class="form" method="post">
         <label for="">Email</label><br />
-        <input placeholder=""  type="email" class="form-control" name="email" /><br />
+        <input
+          placeholder=""
+          type="email"
+          class="form-control"
+          name="email"
+        /><br />
         <label for="">Name</label><br />
-        <input placeholder="" type="text" class="form-control" name="name" /><br /><br />
+        <input
+          placeholder=""
+          type="text"
+          class="form-control"
+          name="name"
+        /><br /><br />
         <label for="">Age</label><br />
-        <input placeholder="" type="number" class="form-control" name="age" /><br /><br />
+        <input
+          placeholder=""
+          type="number"
+          class="form-control"
+          name="age"
+        /><br /><br />
         <label for="">Phone</label><br />
-        <input placeholder="" type="number" class="form-control" name="phone" /><br /><br />
+        <input
+          placeholder=""
+          type="number"
+          class="form-control"
+          name="phone"
+        /><br /><br />
         <input type="submit" value="Login" />
       </form>
 
