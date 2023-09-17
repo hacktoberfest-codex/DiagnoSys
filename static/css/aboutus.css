@@ -26,7 +26,7 @@ body{
     width:450px;
     font-size: 20px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     color:  var(--fontcolordark);
 }
 .navElemContainers + .lastnav{
@@ -86,14 +86,14 @@ nav.sticky{
     color:  var(--maindgreen);
 }
 .navItem a{
-    color: var(--bg-light);
+    color: var(--maindgreen);
+    font-weight: bold;
 }
 .navItem{
     cursor: pointer;
     position: relative;
     text-decoration: none;
     font-family: 'Popins',sans-serif;
-    
     font-size: 18px;
     letter-spacing:0.5px;
 }
@@ -261,7 +261,7 @@ nav.sticky{
 .member_subtext{
     font-size: 20px;
     font-weight:400; 
-    width: 85%;
+    /* width: 85%; */
     color:  var(--fontcolordark);
 }
 a{
