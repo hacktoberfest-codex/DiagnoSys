@@ -1,0 +1,318 @@
+:root{
+    --mainred: #DA1212;
+    --mainblue: #041562; 
+    --maindgreen:#40a879;
+    --maingreen:#50CB93;
+    --bg-black: #232b2b;
+    --mainpurple:#7353B0;
+    --bg-light :#DCE1DE;
+    --fontcolor:rgb(240, 239, 238);
+    --fontcolordark: #1F2421;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color: var(--bg-light);
+   
+}
+nav{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 150px;
+    width: 90%;
+    justify-content: center;
+    border-bottom: 2px solid var(--mainred);
+    margin: 0 70px;
+  
+}
+.navcontainer a{
+    text-decoration: none;
+}
+.logocontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.logocontainer img{
+    width: 70px;
+    height:70px;
+
+}
+.logo{
+    font-family: 'Rampart One', cursive;
+    z-index: 3;
+    margin-left: -10px;
+    font-size: 38px;
+    font-weight:900;
+    font-style: italic;
+    color:  var(--fontcolordark);
+    letter-spacing: -1px;
+}
+.button{
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    display: flex;
+    align-items: center;
+    padding:10px 15px ;
+    border:1px solid white;
+    border-radius: 4px;  
+    background-color: var(--maingreen);
+    max-width: 255px;
+    margin-top: 20px;
+    color: var(--fontcolordark);
+    font-size: 20px;
+    font-weight:600;
+    transition: all 0.4s ease-in-out;
+}
+.button:hover{
+    transition: all 0.4s ease-in-out;
+    
+    scale: 1.02;
+    border:2px solid var(--fontcolordark);
+}
+
+.content{
+    margin: 40px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headerred{
+    font-size: 45px;
+    font-weight:800; 
+    color:  var(--fontcolordark);
+    
+}
+.headerred> span:nth-child(1){
+    font-style: italic;
+    text-shadow: 2px 2px 70px #4b4d4d;
+    background: -webkit-linear-gradient(0.30turn,var(--mainred), #c04848);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* code for green text colour */
+.headergreen{
+    font-size: 45px;
+    font-weight:800; 
+    color:  var( --fontcolordark);
+    
+}
+.headergreen> span:nth-child(1){
+    font-style: italic;
+    text-shadow: 2px 2px 70px #4b4d4d;
+    background: -webkit-linear-gradient(0.30turn,#98d89f, #0f6f1a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* code for green text colour  ENDS*/
+
+.pointcontainer,.subtext{
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight:500;
+    color:  var( --fontcolordark);
+    line-height: 30px;
+}
+
+.pointcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 60px 150px 0 150px;
+    padding-bottom: 30px;
+    border-bottom: 1.5px solid var(--mainred);
+    align-items: left;
+}
+/* code for green text colour */
+.pointcontainergreen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px 150px 0 150px;
+    padding-bottom: 30px;
+    border-bottom: 1.5px solid #0f6f1a;
+    align-items: center;
+}
+/* code for green text colour  ENDS*/
+.linksred{
+    font-size: 17px;
+    margin:20px 0;
+    align-items: center;
+    text-align: center;
+}
+.linksred a{
+    text-decoration: none;
+    text-shadow: 2px 2px 70px #4b4d4d;
+    background: -webkit-linear-gradient(0.30turn,var(--mainred), #c04848);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.linksred a:after{
+    content: " ";
+    position:absolute;
+    background: -webkit-linear-gradient(0.30turn,var(--mainred), #c04848);
+    height: 2px;
+    width: 0;
+    left:0;
+    bottom: -7px;
+    transition: 0.5s;
+
+}
+.linksred a:hover{
+    transition: 0.5s;
+    color: #ffffff; 
+    font-weight: 600;
+    
+}
+
+.linksred a:hover:after{
+    width: 100%;
+    transition: 0.5s;
+
+}
+
+/* code for green text colour */
+.linksgreen{
+    font-size: 17px;
+    margin:20px 0;
+    align-items: center;
+    text-align: center;
+}
+.linksgreen a{
+    text-decoration: none;
+    text-shadow: 2px 2px 70px #4b4d4d;
+    background: var(--maindgreen);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.linksgreen a:after{
+    content: " ";
+    position:absolute;
+    background: var(--maindgreen);
+    height: 2px;
+    width: 0;
+    left:0;
+    bottom: -7px;
+    transition: 0.5s;
+
+}
+.linksgreen a:hover{
+    transition: 0.5s;
+    color: #ffffff; 
+    font-weight: 600;
+    
+}
+
+.linksgreen a:hover:after{
+    width: 100%;
+    transition: 0.5s;
+
+}
+/* footer */
+
+.footer-content{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    
+    flex-direction: column;
+    text-align: center;
+}
+footer{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;
+    margin-top: 70px;
+    background:#111;
+    height:280px;
+    width:100vw;
+    font-family: "";
+    color:#fff;
+    
+}
+.footer-bottom{
+    background: #000;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+
+.footer-content h3{
+    font-size: 22px;
+    font-weight:400;
+    color:  var(--bg-light);
+    
+}
+
+.footer-content p{
+    max-width: 500px;
+    margin: 20px auto;
+    line-height: 28px;
+    font-size:14px;
+
+}
+.github{ 
+    width:20px;
+    height: 20px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin:1rem 0 3rem 0;
+
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+
+}
+.socials a i{
+    font-size:1.1rem;
+}
+.socials a:hover i{
+    color:aqua;
+}
+
+
+.footer-bottom p{
+    font-size:14px;
+    word-spacing:2px;
+    text-transform:capitalize;
+
+}
+.footer-bottom span{
+    
+    text-transform: uppercase;
+    opacity: 1;
+    font-weight: 200;
+}
+.footer-bottom span a{
+    text-decoration: none;
+    color: #fff;
+    opacity: 1;
+}
+.footer-bottom span a:hover{
+    color: #fff;
+    opacity: .7;
+}
