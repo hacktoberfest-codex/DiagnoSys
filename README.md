@@ -10,6 +10,7 @@ In healthcare, accurate disease diagnosis is essential for effective treatment, 
 In urban areas, the application can be used by specialists to confirm diagnoses or to monitor patients who are already being treated for a disease. 
 In rural areas, where there may be a shortage of doctors, the application can be used by general practitioners to screen patients for diseases so they get timely medical treatment.
 
+![Screenshot 2023-10-05 210903](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/0405eadd-d514-427b-bf44-66904dd6b3d0)
 
 ## Deployment
 
@@ -40,6 +41,8 @@ Many diseases such as heart, liver and diabetes can be diagnosed and predicted b
 ***
 
 
+![Screenshot 2023-10-05 210937](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/2651a94e-c8f6-4a18-b9b3-02d901be0bfc)
+
 
 ## Our Solution
 We propose the development of an AI-powered Healthcare Diagnostic and Management System. A System that enables doctors to treat patients on a priority basis reducing the chances of human error. 
@@ -49,6 +52,9 @@ The patient-to-doctor ratio in India is highly variable and the need for skills 
 - *Medical Test Centers:* Test centers can collaborate with the application to input test results and patient data. This data contributes to the AI model's improvement.
 
 - *Rural Healthcare Centers:* Healthcare centers in rural areas can use this application to bridge the gap in healthcare services. Even with limited access to medical experts, they can use the AI model to make preliminary assessments and provide better care.
+
+
+![Screenshot 2023-10-05 211301](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/b8bb97d2-9089-4d9a-8433-57dd0cd59dfb)
 
 
 ## Features
@@ -64,6 +70,12 @@ The patient-to-doctor ratio in India is highly variable and the need for skills 
 
 
 ## More ScreenShots
+
+![Screenshot 2023-10-05 211327](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/0357d539-f0da-4449-953d-329bcb68cc54)
+![Screenshot 2023-10-05 211404](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/a1e2151a-243a-4bda-86ad-aef40c7ef195)
+![Screenshot 2023-10-05 211457](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/87ca0ee1-1a8b-4235-9d2c-1c275f4a9a81)
+![Screenshot 2023-10-05 211518](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/548bfadf-f596-4cb9-bccf-f36ee5d02363)
+![Screenshot 2023-10-05 211613](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/01828554-bc40-4ec2-a9fb-cf6c168221f7)
 
 
 
@@ -88,4 +100,4 @@ The patient-to-doctor ratio in India is highly variable and the need for skills 
 - [Rama Singh](https://github.com/RamaSingh7653)
 
 
- 
+
