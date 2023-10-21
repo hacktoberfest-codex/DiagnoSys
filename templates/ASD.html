@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/ASD.css')}}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+ 
+</head>
+
+<div>
+  <nav>
+    <div class="navElemContainers flexlogo">
+      <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+      <div class="logo">MedAware</div>
+    </div>
+    <div class="navElemContainers middlenav">
+      <div class="navItem"><a href="{{url_for('main')}}">Home</a></div>
+      <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
+
+    </div>
+    <div class="navElemContainers">
+      <div class="buttonColour purple"><a href="{{url_for('logout')}}">Log Out</a></div>
+    </div>
+  </nav>
+
+  <div class="formcontainer" id="predict">
+
+
+    <div class="headerline">Autism Spectrum Disorder</div>
+    <div class="divider_thick up10 "></div>
+    <div class="flex1">
+          <form action="{{ url_for('predictPage_ASD') }}" method="POST">
+
+            <div class="labelspacing">
+              <label for="A1">Often notice small sounds when others do not:</label>
+              <select id="A1" name="A1">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A2">I usually concentrate more on the whole picture, rather than the small details:</label>
+              <select id="A2" name="A2">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A3">I find it easy to do more than one thing at once:</label>
+              <select id="A3" name="A3">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A4">If there is an interruption. I can switch back to what i was doing very quickly:</label>
+              <select id="A4" name="A4">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A5">I find it easy between the lines when someone is talking to me:</label>
+              <select id="A5" name="A5">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A6">I know how to tell if someone listening to me is getting bored:</label>
+              <select id="A6" name="A6">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A7">When i'm reading a story. I find it difficult to work out the character's intentions:</label>
+              <select id="A7" name="A7">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A8">I like to collect information about categories of things:</label>
+              <select id="A8" name="A8">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A9">I find it easy to work out what someone is thinking or feeling just by looking at their
+                face:</label>
+              <select id="A9" name="A9">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="A10">I find it difficult to work out people's intentions:</label>
+              <select id="A10" name="A10">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option selected>----select option----</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+            </div>
+
+            
+
+            <div class="labelspacing">
+              <label for="jaundice">Wheather the case was born with jaundice:</label>
+              <select id="jaundice" name="jaundice">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="labelspacing">
+              <label for="austim">Austim:</label>
+              <select id="austim" name="austim">
+                <option selected>----select option----</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <input type="submit" class="buttonColour purple" value="Predict">
+          </form>
+          
+          <div class="formimage">
+            <img src="{{url_for('static',filename='../static/resources/Asdmainimg.svg')}}">
+          </div>
+
+
+    </div>
+        
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+      <h3>MedAware.co</h3>
+      <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+      <p>
+        Want to contribute ? 
+        <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+      </p>
+  </div>
+  <div class="footer-bottom">
+    <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj. </a ></span></p>
+  </div>
+</footer>
+<script type="text/javascript">
+  window.addEventListener("scroll", function () {
+    var nav = document.querySelector("nav");
+    nav.classList.toggle("sticky", window.scrollY > 0);
+  }) 
+</script>
+
+
+
+</body>
+
+</html>

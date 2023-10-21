@@ -3,26 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/table.css">
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{url_for('static',filename='../static/css/main.css')}}"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
     <title>Document</title>
+    
 </head>
-<body>
-   
-        {% for patient in patients %}
-            <p class= {{ patient.id }} id = {{ patient.email }} onclick="redirect(event)" id="x">{{ patient.name }}</p>
+<body>  
+            {% if message %}
+            <script>
+                let p = "{{message}}"
+                window.addEventListener('load', 
+                    function() { 
+                    alert(p);
+                    }, false);
+            </script>
+            {% endif %}
+        <nav>
+            <div class="navElemContainers flexlogo">
+            <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+            <div class="logo">DiagnoSys</div>
+            </div>
+            <div class="navElemContainers middlenav">
+            <div class="navItem" ><a href="{{url_for('main')}}">Home</a></div>
+            <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
+            
+            </div>
+            <div class="navElemContainers">
+            <div class="buttonColour"><a href="{{url_for('logout')}}">Log Out</a></div>
+            
+            </div>
+        </nav>
+        <div class="allpatientpage_container">
+            <table class="table_container">
+                <tr>
+                  <th><div>Name</div></th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Age</th>
+                  <th>Liver disease</th>
+                  <th>Heart disease</th>
+                  <th>Diabetes</th>
+                </tr>
+                
+                {% for patient in patients %}
+                <tr>
+                    <td><div class= {{ patient.id }} id = {{ patient.email }} onclick="redirect(event)" >{{ patient.name }}</div></td>
+                    <td><div id="x">{{ patient.email }}</div></td>
+                    <td><div id="x">{{ patient.phone }}</div></td>
+                    <td><div id="x">{{ patient.age }}</div></td>
+                    {% if(patient.liver_disease==1)%}
+                    <td class="center"><div style="background-color:#e53f3f" class="resultbox" id="x"></div></td>
+                    {% else %}
+                    <td class="center"><div style="background-color:#40a879" class="resultbox" id="x"></div></td>
 
-        {% endfor %}
+                    {% endif %}
 
+                    {% if(patient.heart_disease==1)%}
+                    <td ><div style="background-color:#e53f3f" class="resultbox" id="x"></div></td>
+                    {% else %}
+                    <td ><div style="background-color:#40a879" class="resultbox" id="x"></div></td>
+
+                    {% endif %}
+                
+                    {% if(patient.diabetes==1)%}
+                    <td class="center"><div style="background-color:#e53f3f" class="resultbox" id="x"></div></td>
+                    {% else %}
+                    <td class="center"><div style="background-color:#40a879" class="resultbox" id="x"></div></td>
+
+                    {% endif %}
+                </tr>
+                {% endfor %}
+              </table>
+              
+        </div>
+        <div class="dividergradientBW" id="dividergradientBW"></div>
+        <!-- <div class="backcontainer">
+            <div class="textback"></div>
+            <div class="buttonColour red"><a href="{{url_for('logout')}}">Back</a></div>
+        </div> -->
+        <div class="returncontainer">
+            <div class="imagecontainer">
+                <img src="{{url_for('static',filename='../static/resources/Doctors-pana.svg')}}">
+            </div>
+            <div class="backtext">
+                <div class="buttonColour"><a href="{{url_for('uploadpatient')}}">Add more patients?</a></div>
+            </div>
+
+            
+        </div>
+        <footer>
+            <div class="footer-content">
+              <h3>MedAware.co</h3>
+              <p>
+                "Stay informed, stay ahead - let our disease check guide you through
+                life's uncertain thread."
+              </p>
+              <p>
+                Want to contribute ?
+                <img
+                  class="github"
+                  src="{{url_for('static',filename='../static/resources/github-4.png')}}"
+                />
+              </p>
+            </div>
+            <div class="footer-bottom">
+              <p>
+                copyright &copy;2023. designed by
+                <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span>
+                <span><a href="https://github.com/samyak269"> Samyak , </a></span>
+                <span
+                  ><a href="https://github.com/The-Prithwiraj06"
+                    >Prithwiraj,
+                  </a></span
+                >
+                <span><a href="https://github.com/deepak1ok">Deepak, </a></span>
+                <span
+                  ><a href="https://github.com/saswatdas121"
+                    >Saswat Jyoti Das.
+                  </a></span
+                >
+    
+                <span
+                  ><a href="https://github.com/RamaSingh7653">Rama Singh </a></span
+                >
+              </p>
+            </div>
+          </footer>
+        
+        <script type ="text/javascript"> 
+            window.addEventListener("scroll",function(){ 
+                var nav = document.querySelector("nav"); 
+                nav.classList.toggle("sticky",window.scrollY > 0); 
+            }) 
+        </script>
+          
        <script>
     
             function redirect(e){
+                
                 console.log(e)
                 const classvar = e.target.className;
                 const email = e.target.id
-                console.log(classvar)
+                console.log(email)
                 fetch('http://localhost:5002/main',
                 {
                     headers:{
-                        'content-type':'application/json'
+                        'Content-Type':'application/json'
                     },
                     method : 'post',
                     body: JSON.stringify({
@@ -31,6 +170,8 @@
                     })
                 }).then(
                     (resp)=>{
+                        
+                        
                         window.location.href='http://localhost:5002/main'
                     }
                 )

@@ -40,7 +40,9 @@ Many diseases such as heart, liver and diabetes can be diagnosed and predicted b
 
 ***
 
+
 ![Screenshot 2023-10-05 210937](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/2651a94e-c8f6-4a18-b9b3-02d901be0bfc)
+
 
 ## Our Solution
 We propose the development of an AI-powered Healthcare Diagnostic and Management System. A System that enables doctors to treat patients on a priority basis reducing the chances of human error. 
@@ -51,7 +53,9 @@ The patient-to-doctor ratio in India is highly variable and the need for skills 
 
 - *Rural Healthcare Centers:* Healthcare centers in rural areas can use this application to bridge the gap in healthcare services. Even with limited access to medical experts, they can use the AI model to make preliminary assessments and provide better care.
 
+
 ![Screenshot 2023-10-05 211301](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/b8bb97d2-9089-4d9a-8433-57dd0cd59dfb)
+
 
 ## Features
 1. *Accessible:* It addresses the critical issue of healthcare accessibility, especially in underserved areas, by providing a reliable and accessible diagnostic tool.
@@ -72,6 +76,8 @@ The patient-to-doctor ratio in India is highly variable and the need for skills 
 ![Screenshot 2023-10-05 211457](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/87ca0ee1-1a8b-4235-9d2c-1c275f4a9a81)
 ![Screenshot 2023-10-05 211518](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/548bfadf-f596-4cb9-bccf-f36ee5d02363)
 ![Screenshot 2023-10-05 211613](https://github.com/hacktoberfest-codex/DiagnoSys/assets/103797867/01828554-bc40-4ec2-a9fb-cf6c168221f7)
+
+
 
 ## Tech Stack
 
@@ -94,5 +100,4 @@ The patient-to-doctor ratio in India is highly variable and the need for skills 
 - [Rama Singh](https://github.com/RamaSingh7653)
 
 
- 
->>>>>>> Stashed changes
+

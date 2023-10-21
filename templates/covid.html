@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='../static/css/covid.css')}}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+	</head>
+
+	
+        <nav>
+            <div class="navElemContainers flexlogo">
+              <img src="{{url_for('static',filename='../static/resources/heart.png')}}">
+              <div class="logo">MedAware</div>
+            </div>
+            <div class="navElemContainers middlenav">
+              <div class="navItem" ><a href="{{url_for('main')}}">Home</a></div>
+              <div class="navItem"><a href="{{url_for('aboutus')}}">About Us</a></div>
+              
+            </div>
+            <div class="navElemContainers">
+              <div class="buttonColour cgreen"><a href="{{url_for('logout')}}">Log Out</a></div>
+              <div class="buttonColour cgreen"><a href="{{ url_for('main') }}">Back</a></div>
+            
+          </nav>
+
+          <div class="formcontainer" id="predict">
+            <div >
+              <div class="headerline">COVID-19 Test using X-Ray images</div>
+              <div class="divider_thick up10 "></div>
+
+            </div>
+            <div class="flex2">
+                <div class="flex1">
+                    <input id="image-selector" type="file"> 
+                    <button id="predict-button" class=" buttonpred ">Predict</button>           
+                    <img id="selected-image" class = "selectimg " src="" alt='Selected image'>
+                </div>
+                <div class="divider"></div>
+                <div class="flex1">
+                    <div>
+                        <div class="predbox">
+                          <div >PREDICTION : </div>
+                          <div class="boxresult" id="result"> </div>
+                        </div>
+                        <div class="formimage">
+                          <img src="{{url_for('static',filename='../static/resources/Feaver.svg')}}">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+           
+          </div>
+
+          <footer>
+            <div class="footer-content">
+                <h3>MedAware.co</h3>
+                <p>"Stay informed, stay ahead - let our disease check guide you through life's uncertain thread."</p>
+                <p>
+                  Want to contribute ? 
+                  <img class="github" src="{{url_for('static',filename='../static/resources/github-4.png')}}">
+                </p>
+            </div>
+            <div class="footer-bottom">
+              <p>copyright &copy;2023. designed by <span><a href="https://github.com/Gaurav07076">Gaurav, </a></span><span><a href="https://github.com/samyak269"> Samyak & </a></span><span><a href=https://github.com/The-Prithwiraj06>Prithwiraj. </a ></span></p>
+            </div>
+        </footer>
+
+	</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+    window.addEventListener("scroll",function(){ 
+        var nav = document.querySelector("nav"); 
+        nav.classList.toggle("sticky",window.scrollY > 0); 
+    }) ;
+    let base64Image;
+    $("#image-selector").change(function() {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let dataURL = reader.result;
+            $('#selected-image').attr("src", dataURL);
+            base64Image = dataURL.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+            console.log(base64Image);
+        }
+        reader.readAsDataURL($("#image-selector")[0].files[0]);
+        $("#result").text("");
+        $("#probability").text("");
+
+    });
+
+    $("#predict-button").click(function(){
+            let message = {
+            image: base64Image
+        }
+        console.log(message);
+        $.post("/predict_covid", JSON.stringify(message), function(response){
+            $("#result").text(response.prediction.result);
+            $("#probability").text(response.prediction.accuracy.toFixed(2));
+            console.log(response);
+        });
+    });
+    
+</script>
+
+</html>

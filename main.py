@@ -140,7 +140,7 @@ def uploadpatient():
                    name=name, age=age, phone=phone))
     db.session.commit()
 
-    return {"message": "patient created"}
+    return redirect(url_for('patients'))
 
 
 @app.route('/patients', methods=['GET', 'POST'])
@@ -171,16 +171,20 @@ def register():
     else:
         return render_template('register.html')
 
+from flask import jsonify
 
 @app.route('/main', methods=['GET', 'POST'])
 def main():
+
     # render_template('main.html')
     if request.method == 'GET':
+        print('get')
         return render_template("main.html")
 
     else:
+        
         try:
-            print(request.get_json)
+            print(request.get_json())
             patient_id = request.json['patient']
 
             global patient_email
@@ -192,8 +196,8 @@ def main():
             print(patient_email)
             session["patient_id"] = patient_id
 
-            return render_template('main.html')
-
+            #return render_template('main.html')
+            return {"h":"me"}
             # result = wikipedia.summary(query,sentences = 10)
             # return render_template("main.html",result=result,query = query, pred = 1)
 
@@ -272,7 +276,7 @@ def predictPage_heart():
 @app.route("/email_heart", methods=['POST', 'GET'])
 def email_heart_pos():
     if request.method == 'POST':
-        msg = Message("Heart_results", sender='medaware@demo.co',
+        msg = Message("Heart_results", sender='DiagnoSys@demo.co',
                       recipients=[patient_email])
         msg.body = "Great! Your heart looks to be in great condition! Here is what you can do to continue having a healthy heart\n 1. Take a 10-minute walk. If you don't exercise at all, a brief walk is a great way to start.\n\n2. Give yourself a lift. Lifting a hardcover book or a two-pound weight a few times a day can help tone your arm muscles.\n\n3. Eat one extra fruit or vegetable a day.\n\n4. Make breakfast count. Start the day with some fruit and a serving of whole grains, like oatmeal, bran flakes, or whole-wheat toast.\n\n5. Have a handful of nuts. Walnuts, almonds, peanuts, and other nuts are good for your heart.\n\n6. Sample the fruits of the sea. Eat fish or other types of seafood instead of red meat once a week. It's good for the heart, the brain, and the waistline.\n\n7. Breathe deeply. Try breathing slowly and deeply for a few minutes a day. It can help you relax.\n\n8. Wash your hands often. Scrubbing up with soap and water often during the day is a great way to protect your heart and health. The flu, pneumonia, and other infections can be very hard on the heart.\n\n9. Count your blessings. Taking a moment each day to acknowledge the blessings in your life is one way to start tapping into other positive emotions. These have been linked with better health, longer life, and greater well-being, just as their opposites — chronic anger, worry, and hostility."
         mail.send(msg)
@@ -282,7 +286,7 @@ def email_heart_pos():
 @app.route("/email_heart_neg", methods=['POST', 'GET'])
 def email_heart_neg():
     if request.method == 'POST':
-        msg = Message("Heart_results", sender='medaware@demo.co',
+        msg = Message("Heart_results", sender='DiagnoSys@demo.co',
                       recipients=[patient_email])
         msg.body = "Oopss!! There are chances you might be afflicted with a heart disease . Go get your clinical tests done and consult with your doctor asap. There is no need to panic. It is just a prediction which may be even be incorrect."
         mail.send(msg)
@@ -306,7 +310,7 @@ def predictPage_liver():
 @app.route("/email_liver", methods=['POST', 'GET'])
 def email_liver_pos():
     if request.method == 'POST':
-        msg = Message("Liver_results", sender='medaware@demo.co',
+        msg = Message("Liver_results", sender='DiagnoSys@demo.co',
                       recipients=[patient_email])
         msg.body = "GREAT! you are in good Health. Kudos! Your Liver seems healthy. You could follow the below suggestions for further"
         mail.send(msg)
@@ -316,7 +320,7 @@ def email_liver_pos():
 @app.route("/email_liver_neg", methods=['POST', 'GET'])
 def email_liver_neg():
     if request.method == 'POST':
-        msg = Message("Liver_results", sender='medaware@demo.co',
+        msg = Message("Liver_results", sender='DiagnoSys@demo.co',
                       recipients=[patient_email])
         msg.body = "Oopss!! There are chances you might be afflicted with a liver disorder . Go get your clinical tests done and consult with your doctor asap. There is no need to panic. It is just a prediction which may be even be incorrect."
         mail.send(msg)
@@ -343,7 +347,7 @@ def predictPage_ASD():
 def email_asd_pos():
     if request.method == 'POST':
         msg = Message("Autisum Disorder results",
-                      sender='medaware@demo.co', recipients=[patient_email])
+                      sender='DiagnoSys@demo.co', recipients=[patient_email])
         msg.body = "Great! Your look to be in great condition! Here is what you can do to avoid this disorder. \n\nLive healthy. Have regular check-ups, eat well-balanced meals, and exercise. \nMake sure you have good prenatal care, and take all recommended vitamins and supplements. \nDon’t take drugs during pregnancy. Ask your doctor before you take any medication. This is especially true for some anti-seizure drugs. \nAvoid alcohol. Say “no” to that glass of wine -- and any kind of alcoholic beverage -- while you’re pregnant. Seek treatment for existing health conditions. If you've been diagnosed with celiac disease or PKU, follow your doctor’s advice for keeping them under control. \nGet vaccinated. Make sure you get the German measles (rubella) vaccine before you get pregnant. It can prevent rubella-associated autism."
         mail.send(msg)
         return render_template('predict_ASD.html', pred=0, message="Mail sent")
@@ -353,7 +357,7 @@ def email_asd_pos():
 def email_asd_neg():
     if request.method == 'POST':
         msg = Message("Autisum Disorder results",
-                      sender='medaware@demo.co', recipients=[patient_email])
+                      sender='DiagnoSys@demo.co', recipients=[patient_email])
         msg.body = "Oopss!! There are chances you might be suffering from Autism sprectrum disorder. Go get your clinical tests done and consult with your doctor asap. There is no need to panic. It is just a prediction which may be even be incorrect."
         mail.send(msg)
         return render_template('predict_ASD.html', pred=1, message="Mail sent")
@@ -378,7 +382,7 @@ def predictPage_diabetes():
 @app.route("/email_diabetes", methods=['POST', 'GET'])
 def email_di_pos():
     if request.method == 'POST':
-        msg = Message("Diabetes_results", sender='medaware@demo.co',
+        msg = Message("Diabetes_results", sender='DiagnoSys@demo.co',
                       recipients=[patient_email])
         msg.body = "Great! Your looks to be in great condition! Here is what you can do to continue being healthy heart\n 1. Take a 10-minute walk. If you don't exercise at all, a brief walk is a great way to start.\n\n2. Give yourself a lift. Lifting a hardcover book or a two-pound weight a few times a day can help tone your arm muscles.\n\n3. Eat one extra fruit or vegetable a day.\n\n4. Make breakfast count. Start the day with some fruit and a serving of whole grains, like oatmeal, bran flakes, or whole-wheat toast.\n\n5. Have a handful of nuts. Walnuts, almonds, peanuts, and other nuts are good for your heart.\n\n6. Sample the fruits of the sea. Eat fish or other types of seafood instead of red meat once a week. It's good for the heart, the brain, and the waistline.\n\n7. Breathe deeply. Try breathing slowly and deeply for a few minutes a day. It can help you relax.\n\n8. Wash your hands often. Scrubbing up with soap and water often during the day is a great way to protect your heart and health. The flu, pneumonia, and other infections can be very hard on the heart.\n\n9. Count your blessings. Taking a moment each day to acknowledge the blessings in your life is one way to start tapping into other positive emotions. These have been linked with better health, longer life, and greater well-being, just as their opposites — chronic anger, worry, and hostility."
         mail.send(msg)
@@ -388,7 +392,7 @@ def email_di_pos():
 @app.route("/email_diabetes_neg", methods=['POST', 'GET'])
 def email_di_neg():
     if request.method == 'POST':
-        msg = Message("Heart_results", sender='medaware@demo.co',
+        msg = Message("Heart_results", sender='DiagnoSys@demo.co',
                       recipients=[patient_email])
         msg.body = "Oopss!! There are chances you might be suffering from diabetes. Go get your clinical tests done and consult with your doctor asap. There is no need to panic. It is just a prediction which may be even be incorrect."
         mail.send(msg)
